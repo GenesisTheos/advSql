@@ -141,7 +141,6 @@ CREATE TABLE Orders
 	OrderTotal DECIMAL (6,2) NOT NULL,
 	EmployeeID INT NOT NULL,
 	CustID INT NOT NULL,
-	PrimaryChef INT NOT NULL,--tbd
 	FOREIGN KEY(PrimaryChef) REFERENCES Chefs(ChefID),
 	FOREIGN KEY(LocationID) REFERENCES Locations(LocationID),
 	FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeeID),
