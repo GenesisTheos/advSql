@@ -1,7 +1,5 @@
 DBCC CHECKIDENT (Tables, RESEED, 0)
 
-delete from Locations
-
 CREATE DATABASE Restaurant
 USE Restaurant
 
