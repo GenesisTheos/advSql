@@ -577,598 +577,112 @@ VALUES
 ('Truffle',                 20);
 
 -- Recipes
-INSERT INTO Recipes (IngredientID, DishID, IngredientQuantity)
-VALUES
-
 -- ============================================================
--- LOCATION 1 (DUBLIN) MAINS
--- ============================================================
-
--- DishID 11 | Sirloin Steak
-(1,   11, 280),  -- Beef Sirloin
-(52,  11, 250),  -- Rooster Potatoes
-(42,  11, 100),  -- Cherry Tomatoes
-(40,  11, 80),   -- Mushrooms
-(63,  11, 20),   -- Butter
-(97,  11, 5),    -- Sea Salt
-(88,  11, 3),    -- Black Pepper
-
--- DishID 12 | Ribeye Steak
-(2,   12, 340),  -- Beef Ribeye
-(52,  12, 200),  -- Rooster Potatoes
-(64,  12, 100),  -- Double Cream
-(88,  12, 10),   -- Black Pepper
-(63,  12, 20),   -- Butter
-(121, 12, 50),   -- Beef Stock
-(54,  12, 80),   -- Broccoli
-(55,  12, 60),   -- Green Beans
-(97,  12, 5),    -- Sea Salt
-
--- DishID 13 | Beef Burger
-(3,   13, 200),  -- Beef Mince
-(65,  13, 40),   -- Cheddar Cheese
-(46,  13, 30),   -- Cos Lettuce
-(43,  13, 60),   -- Plum Tomatoes
-(110, 13, 30),   -- Pickles
-(79,  13, 1),    -- Brioche Bun
-(52,  13, 200),  -- Rooster Potatoes
-(109, 13, 20),   -- Ketchup
-(108, 13, 20),   -- Mayonnaise
-(97,  13, 3),    -- Sea Salt
-(88,  13, 3),    -- Black Pepper
-
--- DishID 14 | Slow Braised Beef Short Rib
-(4,   14, 350),  -- Beef Short Rib
-(52,  14, 250),  -- Rooster Potatoes
-(63,  14, 30),   -- Butter
-(64,  14, 60),   -- Double Cream
-(125, 14, 150),  -- Red Wine
-(121, 14, 100),  -- Beef Stock
-(34,  14, 80),   -- Onion
-(37,  14, 60),   -- Carrots
-(38,  14, 40),   -- Celery
-(86,  14, 5),    -- Fresh Thyme
-(88,  14, 3),    -- Black Pepper
-(97,  14, 5),    -- Sea Salt
-
--- DishID 15 | Beef Stew
-(3,   15, 300),  -- Beef Mince
-(126, 15, 330),  -- Guinness
-(121, 15, 150),  -- Beef Stock
-(34,  15, 100),  -- Onion
-(37,  15, 100),  -- Carrots
-(38,  15, 60),   -- Celery
-(40,  15, 80),   -- Mushrooms
-(52,  15, 250),  -- Rooster Potatoes
-(63,  15, 30),   -- Butter
-(71,  15, 50),   -- Milk
-(44,  15, 60),   -- Spinach
-(86,  15, 5),    -- Fresh Thyme
-(88,  15, 3),    -- Black Pepper
-(97,  15, 5),    -- Sea Salt
-(77,  15, 80),   -- Brown Bread
-
--- DishID 16 | Roast Half Chicken
-(7,   16, 500),  -- Chicken Breast
-(52,  16, 250),  -- Rooster Potatoes
-(63,  16, 30),   -- Butter
-(84,  16, 5),    -- Fresh Rosemary
-(86,  16, 5),    -- Fresh Thyme
-(33,  16, 10),   -- Garlic
-(122, 16, 100),  -- Chicken Stock
-(54,  16, 80),   -- Broccoli
-(55,  16, 60),   -- Green Beans
-(97,  16, 5),    -- Sea Salt
-(88,  16, 3),    -- Black Pepper
-
--- DishID 17 | Chicken Parmesan
-(7,   17, 200),  -- Chicken Breast
-(73,  17, 180),  -- Spaghetti
-(66,  17, 80),   -- Mozzarella
-(43,  17, 150),  -- Plum Tomatoes
-(33,  17, 10),   -- Garlic
-(83,  17, 5),    -- Fresh Basil
-(134, 17, 80),   -- Breadcrumbs
-(62,  17, 1),    -- Eggs
-(96,  17, 10),   -- Olive Oil
-(97,  17, 5),    -- Sea Salt
-(88,  17, 3),    -- Black Pepper
-
--- DishID 18 | Chicken Caesar Salad
-(7,   18, 180),  -- Chicken Breast
-(46,  18, 120),  -- Cos Lettuce
-(67,  18, 40),   -- Parmesan
-(76,  18, 40),   -- Sourdough Bread
-(113, 18, 60),   -- Caesar Dressing
-(96,  18, 10),   -- Olive Oil
-(97,  18, 5),    -- Sea Salt
-(88,  18, 3),    -- Black Pepper
-
--- DishID 19 | Duck Confit
-(11,  19, 350),  -- Duck Leg
-(52,  19, 250),  -- Rooster Potatoes
-(64,  19, 150),  -- Double Cream
-(49,  19, 100),  -- Red Cabbage
-(139, 19, 2),    -- Oranges
-(63,  19, 20),   -- Butter
-(33,  19, 10),   -- Garlic
-(121, 19, 80),   -- Beef Stock
-(97,  19, 5),    -- Sea Salt
-(88,  19, 3),    -- Black Pepper
-
--- DishID 20 | Chicken Tikka Masala
-(7,   20, 200),  -- Chicken Breast
-(43,  20, 200),  -- Plum Tomatoes
-(64,  20, 100),  -- Double Cream
-(34,  20, 80),   -- Onion
-(33,  20, 15),   -- Garlic
-(91,  20, 10),   -- Cumin
-(90,  20, 10),   -- Paprika
-(92,  20, 5),    -- Turmeric
-(75,  20, 180),  -- Basmati Rice
-(80,  20, 1),    -- Naan Bread
-(96,  20, 15),   -- Olive Oil
-(97,  20, 5),    -- Sea Salt
-
--- DishID 21 | Spaghetti Carbonara
-(73,  21, 180),  -- Spaghetti
-(18,  21, 100),  -- Bacon Rashers
-(62,  21, 3),    -- Eggs
-(67,  21, 60),   -- Parmesan
-(88,  21, 5),    -- Black Pepper
-(97,  21, 5),    -- Sea Salt
-(96,  21, 10),   -- Olive Oil
-
--- DishID 22 | Penne Arrabbiata
-(74,  22, 180),  -- Penne
-(43,  22, 200),  -- Plum Tomatoes
-(33,  22, 15),   -- Garlic
-(61,  22, 10),   -- Chilli
-(83,  22, 10),   -- Fresh Basil
-(96,  22, 20),   -- Olive Oil
-(97,  22, 5),    -- Sea Salt
-(88,  22, 3),    -- Black Pepper
-
--- DishID 23 | Tagliatelle Bolognese
-(75,  23, 180),  -- Tagliatelle
-(3,   23, 200),  -- Beef Mince
-(34,  23, 80),   -- Onion
-(37,  23, 60),   -- Carrots
-(38,  23, 40),   -- Celery
-(33,  23, 10),   -- Garlic
-(43,  23, 150),  -- Plum Tomatoes
-(102, 23, 30),   -- Tomato Puree
-(125, 23, 100),  -- Red Wine
-(67,  23, 40),   -- Parmesan
-(96,  23, 15),   -- Olive Oil
-(97,  23, 5),    -- Sea Salt
-(88,  23, 3),    -- Black Pepper
-
--- DishID 24 | Seafood Linguine
-(76,  24, 180),  -- Linguine
-(27,  24, 100),  -- Atlantic Prawns
-(28,  24, 100),  -- Mussels
-(29,  24, 80),   -- Clams
-(33,  24, 15),   -- Garlic
-(126, 24, 150),  -- White Wine
-(83,  24, 10),   -- Fresh Basil
-(97,  24, 10),   -- Extra Virgin Olive Oil
-(88,  24, 3),    -- Black Pepper
-
--- DishID 25 | Mushroom Risotto
-(74,  25, 180),  -- Arborio Rice
-(41,  25, 150),  -- Wild Mushrooms
-(40,  25, 80),   -- Mushrooms
-(99,  25, 10),   -- Truffle Oil
-(67,  25, 50),   -- Parmesan
-(34,  25, 60),   -- Onion
-(33,  25, 10),   -- Garlic
-(123, 25, 150),  -- Vegetable Stock
-(63,  25, 30),   -- Butter
-(125, 25, 100),  -- White Wine
-(97,  25, 5),    -- Sea Salt
-(88,  25, 3),    -- Black Pepper
-
--- DishID 26 | Pork Belly
-(13,  26, 350),  -- Pork Belly
-(52,  26, 250),  -- Rooster Potatoes
-(63,  26, 30),   -- Butter
-(71,  26, 50),   -- Milk
-(44,  26, 60),   -- Spinach
-(118, 26, 60),   -- Apple Sauce
-(127, 26, 150),  -- Cider
-(122, 26, 80),   -- Chicken Stock
-(97,  26, 5),    -- Sea Salt
-(88,  26, 3),    -- Black Pepper
-
--- DishID 27 | Pork Tenderloin
-(14,  27, 250),  -- Pork Tenderloin
-(52,  27, 250),  -- Rooster Potatoes
-(64,  27, 100),  -- Double Cream
-(107, 27, 20),   -- Wholegrain Mustard
-(106, 27, 10),   -- Dijon Mustard
-(122, 27, 80),   -- Chicken Stock
-(63,  27, 20),   -- Butter
-(44,  27, 80),   -- Spinach
-(97,  27, 5),    -- Sea Salt
-(88,  27, 3),    -- Black Pepper
-
--- DishID 28 | Pulled Pork Sandwich
-(17,  28, 200),  -- Pulled Pork
-(104, 28, 60),   -- BBQ Sauce
-(79,  28, 1),    -- Brioche Bun
-(111, 28, 60),   -- Coleslaw
-(52,  28, 200),  -- Rooster Potatoes
-(97,  28, 3),    -- Sea Salt
-
--- DishID 29 | Pork Schnitzel
-(14,  29, 220),  -- Pork Tenderloin
-(134, 29, 80),   -- Breadcrumbs
-(62,  29, 2),    -- Eggs
-(109, 29, 20),   -- Capers
-(136, 29, 1),    -- Lemons
-(52,  29, 200),  -- Rooster Potatoes
-(100, 29, 200),  -- Vegetable Oil
-(97,  29, 5),    -- Sea Salt
-(88,  29, 3),    -- Black Pepper
-
--- DishID 30 | Irish Breakfast
-(18,  30, 100),  -- Bacon Rashers
-(15,  30, 120),  -- Pork Sausages
-(19,  30, 60),   -- Black Pudding
-(20,  30, 60),   -- White Pudding
-(62,  30, 2),    -- Eggs
-(40,  30, 60),   -- Mushrooms
-(76,  30, 60),   -- Sourdough Bread
-(63,  30, 20),   -- Butter
-(109, 30, 20),   -- Ketchup
-(97,  30, 3),    -- Sea Salt
-
--- DishID 31 | Fish and Chips
-(23,  31, 220),  -- Cod Fillet
-(52,  31, 250),  -- Rooster Potatoes
-(128, 31, 150),  -- Plain Flour
-(62,  31, 1),    -- Eggs
-(126, 31, 150),  -- Guinness
-(155, 31, 80),   -- Mushy Peas
-(111, 31, 40),   -- Tartare Sauce
-(100, 31, 200),  -- Vegetable Oil
-(97,  31, 5),    -- Sea Salt
-
--- DishID 32 | Grilled Salmon
-(25,  32, 220),  -- Salmon Fillet
-(53,  32, 200),  -- New Potatoes
-(63,  32, 30),   -- Butter
-(85,  32, 10),   -- Fresh Dill
-(55,  32, 80),   -- Green Beans
-(56,  32, 60),   -- Asparagus
-(136, 32, 1),    -- Lemons
-(97,  32, 5),    -- Sea Salt
-(88,  32, 3),    -- Black Pepper
-
--- DishID 33 | Seafood Chowder
-(23,  33, 100),  -- Cod Fillet
-(25,  33, 100),  -- Salmon Fillet
-(27,  33, 80),   -- Atlantic Prawns
-(28,  33, 80),   -- Mussels
-(64,  33, 200),  -- Double Cream
-(34,  33, 60),   -- Onion
-(39,  33, 60),   -- Leek
-(37,  33, 60),   -- Carrots
-(124, 33, 150),  -- Fish Stock
-(52,  33, 100),  -- Rooster Potatoes
-(63,  33, 20),   -- Butter
-(77,  33, 80),   -- Brown Bread
-(97,  33, 5),    -- Sea Salt
-(88,  33, 3),    -- Black Pepper
-
--- ============================================================
--- LOCATION 2 (CORK) MAINS
+-- RECIPES (100 records)
+-- IngredientID: 1-161 | DishID: 1-100
+-- Each dish gets 1-3 ingredients, spread across 100 rows
 -- ============================================================
 
--- DishID 60 | Sirloin Steak
-(1,   60, 280),  -- Beef Sirloin
-(52,  60, 250),  -- Rooster Potatoes
-(42,  60, 100),  -- Cherry Tomatoes
-(40,  60, 80),   -- Mushrooms
-(63,  60, 20),   -- Butter
-(97,  60, 5),    -- Sea Salt
-(88,  60, 3),    -- Black Pepper
-
--- DishID 61 | Fillet Steak
-(6,   61, 225),  -- Beef Fillet
-(52,  61, 200),  -- Rooster Potatoes
-(62,  61, 2),    -- Eggs
-(63,  61, 80),   -- Butter
-(86,  61, 5),    -- Fresh Tarragon
-(98,  61, 20),   -- White Wine Vinegar
-(54,  61, 80),   -- Broccoli
-(55,  61, 60),   -- Green Beans
-(97,  61, 5),    -- Sea Salt
-(88,  61, 3),    -- Black Pepper
-
--- DishID 62 | Beef Burger
-(3,   62, 200),  -- Beef Mince
-(65,  62, 40),   -- Cheddar Cheese
-(46,  62, 30),   -- Cos Lettuce
-(43,  62, 60),   -- Plum Tomatoes
-(110, 62, 30),   -- Pickles
-(79,  62, 1),    -- Brioche Bun
-(52,  62, 200),  -- Rooster Potatoes
-(109, 62, 20),   -- Ketchup
-(108, 62, 20),   -- Mayonnaise
-(97,  62, 3),    -- Sea Salt
-(88,  62, 3),    -- Black Pepper
-
--- DishID 63 | Slow Braised Beef Cheek
-(5,   63, 350),  -- Beef Cheek
-(52,  63, 250),  -- Rooster Potatoes
-(63,  63, 30),   -- Butter
-(64,  63, 60),   -- Double Cream
-(125, 63, 150),  -- Red Wine
-(121, 63, 100),  -- Beef Stock
-(37,  63, 100),  -- Carrots
-(34,  63, 60),   -- Onion
-(86,  63, 5),    -- Fresh Thyme
-(97,  63, 5),    -- Sea Salt
-(88,  63, 3),    -- Black Pepper
-
--- DishID 64 | Beef and Guinness Pie
-(3,   64, 300),  -- Beef Mince
-(126, 64, 330),  -- Guinness
-(121, 64, 150),  -- Beef Stock
-(34,  64, 100),  -- Onion
-(37,  64, 80),   -- Carrots
-(40,  64, 80),   -- Mushrooms
-(128, 64, 200),  -- Plain Flour
-(63,  64, 100),  -- Butter
-(52,  64, 250),  -- Rooster Potatoes
-(86,  64, 5),    -- Fresh Thyme
-(97,  64, 5),    -- Sea Salt
-(88,  64, 3),    -- Black Pepper
-
--- DishID 65 | Roast Half Chicken
-(7,   65, 500),  -- Chicken Breast
-(52,  65, 250),  -- Rooster Potatoes
-(63,  65, 30),   -- Butter
-(84,  65, 5),    -- Fresh Rosemary
-(86,  65, 5),    -- Fresh Thyme
-(33,  65, 10),   -- Garlic
-(122, 65, 100),  -- Chicken Stock
-(54,  65, 80),   -- Broccoli
-(55,  65, 60),   -- Green Beans
-(97,  65, 5),    -- Sea Salt
-(88,  65, 3),    -- Black Pepper
-
--- DishID 66 | Chicken Parmesan
-(7,   66, 200),  -- Chicken Breast
-(73,  66, 180),  -- Spaghetti
-(66,  66, 80),   -- Mozzarella
-(43,  66, 150),  -- Plum Tomatoes
-(33,  66, 10),   -- Garlic
-(83,  66, 5),    -- Fresh Basil
-(134, 66, 80),   -- Breadcrumbs
-(62,  66, 1),    -- Eggs
-(96,  66, 10),   -- Olive Oil
-(97,  66, 5),    -- Sea Salt
-(88,  66, 3),    -- Black Pepper
-
--- DishID 68 | Chicken Caesar Salad
-(7,   68, 180),  -- Chicken Breast
-(46,  68, 120),  -- Cos Lettuce
-(67,  68, 40),   -- Parmesan
-(76,  68, 40),   -- Sourdough Bread
-(113, 68, 60),   -- Caesar Dressing
-(96,  68, 10),   -- Olive Oil
-(97,  68, 5),    -- Sea Salt
-(88,  68, 3),    -- Black Pepper
-
--- DishID 69 | Duck Breast
-(12,  69, 250),  -- Duck Breast
-(51,  69, 200),  -- Sweet Potato
-(50,  69, 100),  -- Pak Choi
-(63,  69, 20),   -- Butter
-(141, 69, 80),   -- Cherries
-(121, 69, 80),   -- Beef Stock
-(33,  69, 10),   -- Garlic
-(97,  69, 5),    -- Sea Salt
-(88,  69, 3),    -- Black Pepper
-
--- DishID 70 | Chicken Curry
-(7,   70, 200),  -- Chicken Breast
-(43,  70, 200),  -- Plum Tomatoes
-(64,  70, 100),  -- Double Cream
-(34,  70, 80),   -- Onion
-(33,  70, 15),   -- Garlic
-(91,  70, 10),   -- Cumin
-(90,  70, 10),   -- Paprika
-(92,  70, 5),    -- Turmeric
-(75,  70, 180),  -- Basmati Rice
-(80,  70, 1),    -- Naan Bread
-(115, 70, 40),   -- Mango Chutney
-(96,  70, 15),   -- Olive Oil
-(97,  70, 5),    -- Sea Salt
-
--- DishID 71 | Spaghetti Carbonara
-(73,  71, 180),  -- Spaghetti
-(18,  71, 100),  -- Bacon Rashers
-(62,  71, 3),    -- Eggs
-(67,  71, 60),   -- Parmesan
-(88,  71, 5),    -- Black Pepper
-(97,  71, 5),    -- Sea Salt
-(96,  71, 10),   -- Olive Oil
-
--- DishID 72 | Penne Arrabbiata
-(74,  72, 180),  -- Penne
-(43,  72, 200),  -- Plum Tomatoes
-(33,  72, 15),   -- Garlic
-(61,  72, 10),   -- Chilli
-(83,  72, 10),   -- Fresh Basil
-(96,  72, 20),   -- Olive Oil
-(97,  72, 5),    -- Sea Salt
-(88,  72, 3),    -- Black Pepper
-
--- DishID 73 | Tagliatelle Bolognese
-(75,  73, 180),  -- Tagliatelle
-(3,   73, 200),  -- Beef Mince
-(34,  73, 80),   -- Onion
-(37,  73, 60),   -- Carrots
-(38,  73, 40),   -- Celery
-(33,  73, 10),   -- Garlic
-(43,  73, 150),  -- Plum Tomatoes
-(102, 73, 30),   -- Tomato Puree
-(125, 73, 100),  -- Red Wine
-(67,  73, 40),   -- Parmesan
-(96,  73, 15),   -- Olive Oil
-(97,  73, 5),    -- Sea Salt
-(88,  73, 3),    -- Black Pepper
-
--- DishID 74 | Seafood Linguine
-(76,  74, 180),  -- Linguine
-(27,  74, 100),  -- Atlantic Prawns
-(28,  74, 100),  -- Mussels
-(29,  74, 80),   -- Clams
-(33,  74, 15),   -- Garlic
-(126, 74, 150),  -- White Wine
-(83,  74, 10),   -- Fresh Basil
-(97,  74, 10),   -- Extra Virgin Olive Oil
-(88,  74, 3),    -- Black Pepper
-
--- DishID 75 | Truffle Mushroom Risotto
-(74,  75, 180),  -- Arborio Rice
-(41,  75, 150),  -- Wild Mushrooms
-(40,  75, 80),   -- Mushrooms
-(157, 75, 20),   -- Truffle
-(99,  75, 10),   -- Truffle Oil
-(67,  75, 60),   -- Parmesan
-(34,  75, 60),   -- Onion
-(33,  75, 10),   -- Garlic
-(123, 75, 150),  -- Vegetable Stock
-(63,  75, 30),   -- Butter
-(126, 75, 100),  -- White Wine
-(97,  75, 5),    -- Sea Salt
-(88,  75, 3),    -- Black Pepper
-
--- DishID 76 | Pork Belly
-(13,  76, 350),  -- Pork Belly
-(52,  76, 250),  -- Rooster Potatoes
-(63,  76, 30),   -- Butter
-(71,  76, 50),   -- Milk
-(44,  76, 60),   -- Spinach
-(140, 76, 2),    -- Apples
-(127, 76, 150),  -- Cider
-(122, 76, 80),   -- Chicken Stock
-(97,  76, 5),    -- Sea Salt
-(88,  76, 3),    -- Black Pepper
-
--- DishID 77 | Pork Tenderloin
-(14,  77, 250),  -- Pork Tenderloin
-(52,  77, 250),  -- Rooster Potatoes
-(64,  77, 100),  -- Double Cream
-(107, 77, 20),   -- Wholegrain Mustard
-(106, 77, 10),   -- Dijon Mustard
-(122, 77, 80),   -- Chicken Stock
-(63,  77, 20),   -- Butter
-(44,  77, 80),   -- Spinach
-(97,  77, 5),    -- Sea Salt
-(88,  77, 3),    -- Black Pepper
-
--- DishID 78 | Pulled Pork Sandwich
-(17,  78, 200),  -- Pulled Pork
-(104, 78, 60),   -- BBQ Sauce
-(79,  78, 1),    -- Brioche Bun
-(111, 78, 60),   -- Coleslaw
-(52,  78, 200),  -- Rooster Potatoes
-(97,  78, 3),    -- Sea Salt
-
--- DishID 79 | Pork Rack
-(16,  79, 450),  -- Pork Rack
-(118, 79, 60),   -- Apple Sauce
-(52,  79, 250),  -- Rooster Potatoes
-(54,  79, 80),   -- Broccoli
-(55,  79, 60),   -- Green Beans
-(63,  79, 20),   -- Butter
-(84,  79, 5),    -- Fresh Rosemary
-(97,  79, 5),    -- Sea Salt
-(88,  79, 3),    -- Black Pepper
-
--- DishID 80 | Pork and Chorizo Stew
-(13,  80, 250),  -- Pork Belly
-(21,  80, 100),  -- Chorizo
-(43,  80, 200),  -- Plum Tomatoes
-(34,  80, 80),   -- Onion
-(33,  80, 10),   -- Garlic
-(59,  80, 80),   -- Red Pepper
-(122, 80, 150),  -- Chicken Stock
-(86,  80, 5),    -- Fresh Thyme
-(76,  80, 100),  -- Sourdough Bread
-(63,  80, 20),   -- Butter
-(97,  80, 5),    -- Sea Salt
-(88,  80, 3),    -- Black Pepper
-
--- DishID 81 | Fish and Chips
-(24,  81, 220),  -- Haddock Fillet
-(52,  81, 250),  -- Rooster Potatoes
-(128, 81, 150),  -- Plain Flour
-(62,  81, 1),    -- Eggs
-(126, 81, 150),  -- Guinness
-(155, 81, 80),   -- Mushy Peas
-(111, 81, 40),   -- Tartare Sauce
-(100, 81, 200),  -- Vegetable Oil
-(97,  81, 5),    -- Sea Salt
-
--- DishID 82 | Grilled Salmon
-(25,  82, 220),  -- Salmon Fillet
-(53,  82, 200),  -- New Potatoes
-(63,  82, 30),   -- Butter
-(85,  82, 10),   -- Fresh Dill
-(55,  82, 80),   -- Green Beans
-(56,  82, 60),   -- Asparagus
-(136, 82, 1),    -- Lemons
-(97,  82, 5),    -- Sea Salt
-(88,  82, 3),    -- Black Pepper
-
--- DishID 83 | Seafood Chowder
-(23,  83, 100),  -- Cod Fillet
-(25,  83, 100),  -- Salmon Fillet
-(27,  83, 80),   -- Atlantic Prawns
-(28,  83, 80),   -- Mussels
-(64,  83, 200),  -- Double Cream
-(34,  83, 60),   -- Onion
-(39,  83, 60),   -- Leek
-(37,  83, 60),   -- Carrots
-(124, 83, 150),  -- Fish Stock
-(52,  83, 100),  -- Rooster Potatoes
-(63,  83, 20),   -- Butter
-(77,  83, 80),   -- Brown Bread
-(97,  83, 5),    -- Sea Salt
-(88,  83, 3),    -- Black Pepper
-
--- ============================================================
--- ADDITIONAL DISHES
--- ============================================================
-
--- DishID 101 | Lamb Shank (L1)
-(22,  101, 400), -- Lamb Shank
-(52,  101, 250), -- Rooster Potatoes
-(63,  101, 30),  -- Butter
-(64,  101, 60),  -- Double Cream
-(37,  101, 100), -- Carrots
-(84,  101, 10),  -- Fresh Rosemary
-(121, 101, 100), -- Beef Stock
-(125, 101, 100), -- Red Wine
-(97,  101, 5),   -- Sea Salt
-(88,  101, 3),   -- Black Pepper
-
--- DishID 102 | Seafood Platter (L2)
-(27,  102, 150), -- Atlantic Prawns
-(26,  102, 100), -- Smoked Salmon
-(31,  102, 120), -- Crab Claws
-(32,  102, 6),   -- Oysters
-(77,  102, 80),  -- Brown Bread
-(63,  102, 40),  -- Butter
-(136, 102, 1),   -- Lemons
-(97,  102, 5);   -- Sea Salt
+INSERT INTO Recipes (IngredientID, DishID, IngredientQuantity, DateTime) VALUES
+(1, 1, 2, '2023-01-05 08:00:00'),
+(15, 1, 1, '2023-01-05 08:01:00'),
+(30, 2, 3, '2023-01-06 09:00:00'),
+(45, 2, 2, '2023-01-07 10:00:00'),
+(60, 3, 1, '2023-01-08 11:00:00'),
+(75, 4, 4, '2023-01-09 12:00:00'),
+(90, 4, 2, '2023-01-10 08:30:00'),
+(105, 5, 1, '2023-01-11 09:15:00'),
+(120, 5, 3, '2023-01-12 10:20:00'),
+(135, 6, 2, '2023-01-13 11:45:00'),
+(150, 6, 1, '2023-01-14 08:00:00'),
+(161, 7, 2, '2023-01-15 09:00:00'),
+(5, 7, 3, '2023-01-16 10:30:00'),
+(20, 8, 1, '2023-01-17 11:00:00'),
+(35, 8, 2, '2023-01-18 12:00:00'),
+(50, 9, 3, '2023-01-19 08:45:00'),
+(65, 9, 1, '2023-01-20 09:30:00'),
+(80, 10, 2, '2023-01-21 10:15:00'),
+(95, 10, 4, '2023-01-22 11:00:00'),
+(110, 11, 1, '2023-01-23 08:00:00'),
+(125, 11, 2, '2023-01-24 09:00:00'),
+(140, 12, 3, '2023-01-25 10:00:00'),
+(155, 12, 1, '2023-01-26 11:30:00'),
+(3, 13, 2, '2023-01-27 08:15:00'),
+(18, 13, 3, '2023-01-28 09:45:00'),
+(33, 14, 1, '2023-01-29 10:30:00'),
+(48, 14, 2, '2023-01-30 11:00:00'),
+(63, 15, 4, '2023-01-31 12:00:00'),
+(78, 15, 1, '2023-02-01 08:00:00'),
+(93, 16, 2, '2023-02-02 09:30:00'),
+(108, 16, 3, '2023-02-03 10:00:00'),
+(123, 17, 1, '2023-02-04 11:15:00'),
+(138, 17, 2, '2023-02-05 08:45:00'),
+(153, 18, 3, '2023-02-06 09:00:00'),
+(7, 18, 1, '2023-02-07 10:30:00'),
+(22, 19, 2, '2023-02-08 11:00:00'),
+(37, 19, 4, '2023-02-09 12:00:00'),
+(52, 20, 1, '2023-02-10 08:00:00'),
+(67, 20, 3, '2023-02-11 09:15:00'),
+(82, 21, 2, '2023-02-12 10:00:00'),
+(97, 21, 1, '2023-02-13 11:30:00'),
+(112, 22, 3, '2023-02-14 08:30:00'),
+(127, 22, 2, '2023-02-15 09:00:00'),
+(142, 23, 1, '2023-02-16 10:15:00'),
+(157, 23, 4, '2023-02-17 11:00:00'),
+(10, 24, 2, '2023-02-18 12:00:00'),
+(25, 24, 1, '2023-02-19 08:00:00'),
+(40, 25, 3, '2023-02-20 09:30:00'),
+(55, 25, 2, '2023-02-21 10:00:00'),
+(70, 26, 1, '2023-02-22 11:15:00'),
+(85, 26, 4, '2023-02-23 08:45:00'),
+(100, 27, 2, '2023-02-24 09:00:00'),
+(115, 27, 3, '2023-02-25 10:30:00'),
+(130, 28, 1, '2023-02-26 11:00:00'),
+(145, 28, 2, '2023-02-27 12:00:00'),
+(160, 29, 3, '2023-02-28 08:00:00'),
+(4, 29, 1, '2023-03-01 09:15:00'),
+(19, 30, 2, '2023-03-02 10:00:00'),
+(34, 30, 4, '2023-03-03 11:30:00'),
+(49, 31, 1, '2023-03-04 08:30:00'),
+(64, 31, 3, '2023-03-05 09:00:00'),
+(79, 32, 2, '2023-03-06 10:15:00'),
+(94, 32, 1, '2023-03-07 11:00:00'),
+(109, 33, 3, '2023-03-08 12:00:00'),
+(124, 33, 2, '2023-03-09 08:00:00'),
+(139, 34, 1, '2023-03-10 09:30:00'),
+(154, 34, 4, '2023-03-11 10:00:00'),
+(6, 35, 2, '2023-03-12 11:15:00'),
+(21, 35, 1, '2023-03-13 08:45:00'),
+(36, 36, 3, '2023-03-14 09:00:00'),
+(51, 36, 2, '2023-03-15 10:30:00'),
+(66, 37, 1, '2023-03-16 11:00:00'),
+(81, 37, 4, '2023-03-17 12:00:00'),
+(96, 38, 2, '2023-03-18 08:00:00'),
+(111, 38, 3, '2023-03-19 09:15:00'),
+(126, 39, 1, '2023-03-20 10:00:00'),
+(141, 39, 2, '2023-03-21 11:30:00'),
+(156, 40, 3, '2023-03-22 08:30:00'),
+(8, 40, 1, '2023-03-23 09:00:00'),
+(23, 41, 2, '2023-03-24 10:15:00'),
+(38, 41, 4, '2023-03-25 11:00:00'),
+(53, 42, 1, '2023-03-26 12:00:00'),
+(68, 42, 3, '2023-03-27 08:00:00'),
+(83, 43, 2, '2023-03-28 09:30:00'),
+(98, 43, 1, '2023-03-29 10:00:00'),
+(113, 44, 3, '2023-03-30 11:15:00'),
+(128, 44, 2, '2023-03-31 08:45:00'),
+(143, 45, 1, '2023-04-01 09:00:00'),
+(158, 45, 4, '2023-04-02 10:30:00'),
+(11, 46, 2, '2023-04-03 11:00:00'),
+(26, 46, 1, '2023-04-04 12:00:00'),
+(41, 47, 3, '2023-04-05 08:00:00'),
+(56, 47, 2, '2023-04-06 09:15:00'),
+(71, 48, 1, '2023-04-07 10:00:00'),
+(86, 48, 4, '2023-04-08 11:30:00'),
+(101, 49, 2, '2023-04-09 08:30:00'),
+(116, 49, 3, '2023-04-10 09:00:00'),
+(131, 50, 1, '2023-04-11 10:15:00'),
+(146, 50, 2, '2023-04-12 11:00:00');
 
 -- Customers
 INSERT INTO Customers (CustFName, CustLName, PhoneNum, Email, Age, FavoriteDish, FavoriteEmployee)
