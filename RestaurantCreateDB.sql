@@ -110,6 +110,7 @@ CREATE TABLE Recipes
 	IngredientID INT NOT NULL,
 	DishID INT NOT NULL,
 	IngredientQuantity INT NOT NULL,
+	Unit VARCHAR(50) NOT NULL,
 	FOREIGN KEY(IngredientID) REFERENCES Ingredients(IngredientID),
 	FOREIGN KEY(DishID) REFERENCES Dishes(DishID),
 	DateTime DATETIME Default GETDATE() NOT NULL
