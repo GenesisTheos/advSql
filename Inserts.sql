@@ -338,7 +338,7 @@ VALUES
 (2, 'Goats Cheese Tart',            'Warm goats cheese and caramelised onion tart with dressed rocket salad',                             9.50,  1),
 -- Mains - Beef
 (2, 'Sirloin Steak',                '10oz Irish sirloin steak served with chunky chips, roasted tomato and mushroom',                     32.00, 1),
-(2, 'Fillet Steak',                 '8oz Irish fillet steak with béarnaise sauce, fries and seasonal vegetables',                         42.00, 1),
+(2, 'Fillet Steak',                 '8oz Irish fillet steak with bÃ©arnaise sauce, fries and seasonal vegetables',                         42.00, 1),
 (2, 'Beef Burger',                  'House beef burger with smoked cheddar, lettuce, tomato, pickles and fries',                          16.50, 1),
 (2, 'Slow Braised Beef Cheek',      'Tender slow cooked beef cheek with creamy mash, roasted carrots and red wine jus',                   26.00, 1),
 (2, 'Beef and Guinness Pie',        'Rich beef and Guinness pie with shortcrust pastry, mash and seasonal vegetables',                    19.00, 1),
@@ -575,3 +575,700 @@ VALUES
 ('Mushy Peas',              60),
 ('Baked Beans',             80),
 ('Truffle',                 20);
+
+-- Recipes
+INSERT INTO Recipes (IngredientID, DishID, IngredientQuantity)
+VALUES
+
+-- ============================================================
+-- LOCATION 1 (DUBLIN) MAINS
+-- ============================================================
+
+-- DishID 11 | Sirloin Steak
+(1,   11, 280),  -- Beef Sirloin
+(52,  11, 250),  -- Rooster Potatoes
+(42,  11, 100),  -- Cherry Tomatoes
+(40,  11, 80),   -- Mushrooms
+(63,  11, 20),   -- Butter
+(97,  11, 5),    -- Sea Salt
+(88,  11, 3),    -- Black Pepper
+
+-- DishID 12 | Ribeye Steak
+(2,   12, 340),  -- Beef Ribeye
+(52,  12, 200),  -- Rooster Potatoes
+(64,  12, 100),  -- Double Cream
+(88,  12, 10),   -- Black Pepper
+(63,  12, 20),   -- Butter
+(121, 12, 50),   -- Beef Stock
+(54,  12, 80),   -- Broccoli
+(55,  12, 60),   -- Green Beans
+(97,  12, 5),    -- Sea Salt
+
+-- DishID 13 | Beef Burger
+(3,   13, 200),  -- Beef Mince
+(65,  13, 40),   -- Cheddar Cheese
+(46,  13, 30),   -- Cos Lettuce
+(43,  13, 60),   -- Plum Tomatoes
+(110, 13, 30),   -- Pickles
+(79,  13, 1),    -- Brioche Bun
+(52,  13, 200),  -- Rooster Potatoes
+(109, 13, 20),   -- Ketchup
+(108, 13, 20),   -- Mayonnaise
+(97,  13, 3),    -- Sea Salt
+(88,  13, 3),    -- Black Pepper
+
+-- DishID 14 | Slow Braised Beef Short Rib
+(4,   14, 350),  -- Beef Short Rib
+(52,  14, 250),  -- Rooster Potatoes
+(63,  14, 30),   -- Butter
+(64,  14, 60),   -- Double Cream
+(125, 14, 150),  -- Red Wine
+(121, 14, 100),  -- Beef Stock
+(34,  14, 80),   -- Onion
+(37,  14, 60),   -- Carrots
+(38,  14, 40),   -- Celery
+(86,  14, 5),    -- Fresh Thyme
+(88,  14, 3),    -- Black Pepper
+(97,  14, 5),    -- Sea Salt
+
+-- DishID 15 | Beef Stew
+(3,   15, 300),  -- Beef Mince
+(126, 15, 330),  -- Guinness
+(121, 15, 150),  -- Beef Stock
+(34,  15, 100),  -- Onion
+(37,  15, 100),  -- Carrots
+(38,  15, 60),   -- Celery
+(40,  15, 80),   -- Mushrooms
+(52,  15, 250),  -- Rooster Potatoes
+(63,  15, 30),   -- Butter
+(71,  15, 50),   -- Milk
+(44,  15, 60),   -- Spinach
+(86,  15, 5),    -- Fresh Thyme
+(88,  15, 3),    -- Black Pepper
+(97,  15, 5),    -- Sea Salt
+(77,  15, 80),   -- Brown Bread
+
+-- DishID 16 | Roast Half Chicken
+(7,   16, 500),  -- Chicken Breast
+(52,  16, 250),  -- Rooster Potatoes
+(63,  16, 30),   -- Butter
+(84,  16, 5),    -- Fresh Rosemary
+(86,  16, 5),    -- Fresh Thyme
+(33,  16, 10),   -- Garlic
+(122, 16, 100),  -- Chicken Stock
+(54,  16, 80),   -- Broccoli
+(55,  16, 60),   -- Green Beans
+(97,  16, 5),    -- Sea Salt
+(88,  16, 3),    -- Black Pepper
+
+-- DishID 17 | Chicken Parmesan
+(7,   17, 200),  -- Chicken Breast
+(73,  17, 180),  -- Spaghetti
+(66,  17, 80),   -- Mozzarella
+(43,  17, 150),  -- Plum Tomatoes
+(33,  17, 10),   -- Garlic
+(83,  17, 5),    -- Fresh Basil
+(134, 17, 80),   -- Breadcrumbs
+(62,  17, 1),    -- Eggs
+(96,  17, 10),   -- Olive Oil
+(97,  17, 5),    -- Sea Salt
+(88,  17, 3),    -- Black Pepper
+
+-- DishID 18 | Chicken Caesar Salad
+(7,   18, 180),  -- Chicken Breast
+(46,  18, 120),  -- Cos Lettuce
+(67,  18, 40),   -- Parmesan
+(76,  18, 40),   -- Sourdough Bread
+(113, 18, 60),   -- Caesar Dressing
+(96,  18, 10),   -- Olive Oil
+(97,  18, 5),    -- Sea Salt
+(88,  18, 3),    -- Black Pepper
+
+-- DishID 19 | Duck Confit
+(11,  19, 350),  -- Duck Leg
+(52,  19, 250),  -- Rooster Potatoes
+(64,  19, 150),  -- Double Cream
+(49,  19, 100),  -- Red Cabbage
+(139, 19, 2),    -- Oranges
+(63,  19, 20),   -- Butter
+(33,  19, 10),   -- Garlic
+(121, 19, 80),   -- Beef Stock
+(97,  19, 5),    -- Sea Salt
+(88,  19, 3),    -- Black Pepper
+
+-- DishID 20 | Chicken Tikka Masala
+(7,   20, 200),  -- Chicken Breast
+(43,  20, 200),  -- Plum Tomatoes
+(64,  20, 100),  -- Double Cream
+(34,  20, 80),   -- Onion
+(33,  20, 15),   -- Garlic
+(91,  20, 10),   -- Cumin
+(90,  20, 10),   -- Paprika
+(92,  20, 5),    -- Turmeric
+(75,  20, 180),  -- Basmati Rice
+(80,  20, 1),    -- Naan Bread
+(96,  20, 15),   -- Olive Oil
+(97,  20, 5),    -- Sea Salt
+
+-- DishID 21 | Spaghetti Carbonara
+(73,  21, 180),  -- Spaghetti
+(18,  21, 100),  -- Bacon Rashers
+(62,  21, 3),    -- Eggs
+(67,  21, 60),   -- Parmesan
+(88,  21, 5),    -- Black Pepper
+(97,  21, 5),    -- Sea Salt
+(96,  21, 10),   -- Olive Oil
+
+-- DishID 22 | Penne Arrabbiata
+(74,  22, 180),  -- Penne
+(43,  22, 200),  -- Plum Tomatoes
+(33,  22, 15),   -- Garlic
+(61,  22, 10),   -- Chilli
+(83,  22, 10),   -- Fresh Basil
+(96,  22, 20),   -- Olive Oil
+(97,  22, 5),    -- Sea Salt
+(88,  22, 3),    -- Black Pepper
+
+-- DishID 23 | Tagliatelle Bolognese
+(75,  23, 180),  -- Tagliatelle
+(3,   23, 200),  -- Beef Mince
+(34,  23, 80),   -- Onion
+(37,  23, 60),   -- Carrots
+(38,  23, 40),   -- Celery
+(33,  23, 10),   -- Garlic
+(43,  23, 150),  -- Plum Tomatoes
+(102, 23, 30),   -- Tomato Puree
+(125, 23, 100),  -- Red Wine
+(67,  23, 40),   -- Parmesan
+(96,  23, 15),   -- Olive Oil
+(97,  23, 5),    -- Sea Salt
+(88,  23, 3),    -- Black Pepper
+
+-- DishID 24 | Seafood Linguine
+(76,  24, 180),  -- Linguine
+(27,  24, 100),  -- Atlantic Prawns
+(28,  24, 100),  -- Mussels
+(29,  24, 80),   -- Clams
+(33,  24, 15),   -- Garlic
+(126, 24, 150),  -- White Wine
+(83,  24, 10),   -- Fresh Basil
+(97,  24, 10),   -- Extra Virgin Olive Oil
+(88,  24, 3),    -- Black Pepper
+
+-- DishID 25 | Mushroom Risotto
+(74,  25, 180),  -- Arborio Rice
+(41,  25, 150),  -- Wild Mushrooms
+(40,  25, 80),   -- Mushrooms
+(99,  25, 10),   -- Truffle Oil
+(67,  25, 50),   -- Parmesan
+(34,  25, 60),   -- Onion
+(33,  25, 10),   -- Garlic
+(123, 25, 150),  -- Vegetable Stock
+(63,  25, 30),   -- Butter
+(125, 25, 100),  -- White Wine
+(97,  25, 5),    -- Sea Salt
+(88,  25, 3),    -- Black Pepper
+
+-- DishID 26 | Pork Belly
+(13,  26, 350),  -- Pork Belly
+(52,  26, 250),  -- Rooster Potatoes
+(63,  26, 30),   -- Butter
+(71,  26, 50),   -- Milk
+(44,  26, 60),   -- Spinach
+(118, 26, 60),   -- Apple Sauce
+(127, 26, 150),  -- Cider
+(122, 26, 80),   -- Chicken Stock
+(97,  26, 5),    -- Sea Salt
+(88,  26, 3),    -- Black Pepper
+
+-- DishID 27 | Pork Tenderloin
+(14,  27, 250),  -- Pork Tenderloin
+(52,  27, 250),  -- Rooster Potatoes
+(64,  27, 100),  -- Double Cream
+(107, 27, 20),   -- Wholegrain Mustard
+(106, 27, 10),   -- Dijon Mustard
+(122, 27, 80),   -- Chicken Stock
+(63,  27, 20),   -- Butter
+(44,  27, 80),   -- Spinach
+(97,  27, 5),    -- Sea Salt
+(88,  27, 3),    -- Black Pepper
+
+-- DishID 28 | Pulled Pork Sandwich
+(17,  28, 200),  -- Pulled Pork
+(104, 28, 60),   -- BBQ Sauce
+(79,  28, 1),    -- Brioche Bun
+(111, 28, 60),   -- Coleslaw
+(52,  28, 200),  -- Rooster Potatoes
+(97,  28, 3),    -- Sea Salt
+
+-- DishID 29 | Pork Schnitzel
+(14,  29, 220),  -- Pork Tenderloin
+(134, 29, 80),   -- Breadcrumbs
+(62,  29, 2),    -- Eggs
+(109, 29, 20),   -- Capers
+(136, 29, 1),    -- Lemons
+(52,  29, 200),  -- Rooster Potatoes
+(100, 29, 200),  -- Vegetable Oil
+(97,  29, 5),    -- Sea Salt
+(88,  29, 3),    -- Black Pepper
+
+-- DishID 30 | Irish Breakfast
+(18,  30, 100),  -- Bacon Rashers
+(15,  30, 120),  -- Pork Sausages
+(19,  30, 60),   -- Black Pudding
+(20,  30, 60),   -- White Pudding
+(62,  30, 2),    -- Eggs
+(40,  30, 60),   -- Mushrooms
+(76,  30, 60),   -- Sourdough Bread
+(63,  30, 20),   -- Butter
+(109, 30, 20),   -- Ketchup
+(97,  30, 3),    -- Sea Salt
+
+-- DishID 31 | Fish and Chips
+(23,  31, 220),  -- Cod Fillet
+(52,  31, 250),  -- Rooster Potatoes
+(128, 31, 150),  -- Plain Flour
+(62,  31, 1),    -- Eggs
+(126, 31, 150),  -- Guinness
+(155, 31, 80),   -- Mushy Peas
+(111, 31, 40),   -- Tartare Sauce
+(100, 31, 200),  -- Vegetable Oil
+(97,  31, 5),    -- Sea Salt
+
+-- DishID 32 | Grilled Salmon
+(25,  32, 220),  -- Salmon Fillet
+(53,  32, 200),  -- New Potatoes
+(63,  32, 30),   -- Butter
+(85,  32, 10),   -- Fresh Dill
+(55,  32, 80),   -- Green Beans
+(56,  32, 60),   -- Asparagus
+(136, 32, 1),    -- Lemons
+(97,  32, 5),    -- Sea Salt
+(88,  32, 3),    -- Black Pepper
+
+-- DishID 33 | Seafood Chowder
+(23,  33, 100),  -- Cod Fillet
+(25,  33, 100),  -- Salmon Fillet
+(27,  33, 80),   -- Atlantic Prawns
+(28,  33, 80),   -- Mussels
+(64,  33, 200),  -- Double Cream
+(34,  33, 60),   -- Onion
+(39,  33, 60),   -- Leek
+(37,  33, 60),   -- Carrots
+(124, 33, 150),  -- Fish Stock
+(52,  33, 100),  -- Rooster Potatoes
+(63,  33, 20),   -- Butter
+(77,  33, 80),   -- Brown Bread
+(97,  33, 5),    -- Sea Salt
+(88,  33, 3),    -- Black Pepper
+
+-- ============================================================
+-- LOCATION 2 (CORK) MAINS
+-- ============================================================
+
+-- DishID 61 | Sirloin Steak
+(1,   61, 280),  -- Beef Sirloin
+(52,  61, 250),  -- Rooster Potatoes
+(42,  61, 100),  -- Cherry Tomatoes
+(40,  61, 80),   -- Mushrooms
+(63,  61, 20),   -- Butter
+(97,  61, 5),    -- Sea Salt
+(88,  61, 3),    -- Black Pepper
+
+-- DishID 62 | Fillet Steak
+(6,   62, 225),  -- Beef Fillet
+(52,  62, 200),  -- Rooster Potatoes
+(62,  62, 2),    -- Eggs
+(63,  62, 80),   -- Butter
+(86,  62, 5),    -- Fresh Tarragon
+(98,  62, 20),   -- White Wine Vinegar
+(54,  62, 80),   -- Broccoli
+(55,  62, 60),   -- Green Beans
+(97,  62, 5),    -- Sea Salt
+(88,  62, 3),    -- Black Pepper
+
+-- DishID 63 | Beef Burger
+(3,   63, 200),  -- Beef Mince
+(65,  63, 40),   -- Cheddar Cheese
+(46,  63, 30),   -- Cos Lettuce
+(43,  63, 60),   -- Plum Tomatoes
+(110, 63, 30),   -- Pickles
+(79,  63, 1),    -- Brioche Bun
+(52,  63, 200),  -- Rooster Potatoes
+(109, 63, 20),   -- Ketchup
+(108, 63, 20),   -- Mayonnaise
+(97,  63, 3),    -- Sea Salt
+(88,  63, 3),    -- Black Pepper
+
+-- DishID 64 | Slow Braised Beef Cheek
+(5,   64, 350),  -- Beef Cheek
+(52,  64, 250),  -- Rooster Potatoes
+(63,  64, 30),   -- Butter
+(64,  64, 60),   -- Double Cream
+(125, 64, 150),  -- Red Wine
+(121, 64, 100),  -- Beef Stock
+(37,  64, 100),  -- Carrots
+(34,  64, 60),   -- Onion
+(86,  64, 5),    -- Fresh Thyme
+(97,  64, 5),    -- Sea Salt
+(88,  64, 3),    -- Black Pepper
+
+-- DishID 65 | Beef and Guinness Pie
+(3,   65, 300),  -- Beef Mince
+(126, 65, 330),  -- Guinness
+(121, 65, 150),  -- Beef Stock
+(34,  65, 100),  -- Onion
+(37,  65, 80),   -- Carrots
+(40,  65, 80),   -- Mushrooms
+(128, 65, 200),  -- Plain Flour
+(63,  65, 100),  -- Butter
+(52,  65, 250),  -- Rooster Potatoes
+(86,  65, 5),    -- Fresh Thyme
+(97,  65, 5),    -- Sea Salt
+(88,  65, 3),    -- Black Pepper
+
+-- DishID 66 | Roast Half Chicken
+(7,   66, 500),  -- Chicken Breast
+(52,  66, 250),  -- Rooster Potatoes
+(63,  66, 30),   -- Butter
+(84,  66, 5),    -- Fresh Rosemary
+(86,  66, 5),    -- Fresh Thyme
+(33,  66, 10),   -- Garlic
+(122, 66, 100),  -- Chicken Stock
+(54,  66, 80),   -- Broccoli
+(55,  66, 60),   -- Green Beans
+(97,  66, 5),    -- Sea Salt
+(88,  66, 3),    -- Black Pepper
+
+-- DishID 67 | Chicken Parmesan
+(7,   67, 200),  -- Chicken Breast
+(73,  67, 180),  -- Spaghetti
+(66,  67, 80),   -- Mozzarella
+(43,  67, 150),  -- Plum Tomatoes
+(33,  67, 10),   -- Garlic
+(83,  67, 5),    -- Fresh Basil
+(134, 67, 80),   -- Breadcrumbs
+(62,  67, 1),    -- Eggs
+(96,  67, 10),   -- Olive Oil
+(97,  67, 5),    -- Sea Salt
+(88,  67, 3),    -- Black Pepper
+
+-- DishID 68 | Chicken Caesar Salad
+(7,   68, 180),  -- Chicken Breast
+(46,  68, 120),  -- Cos Lettuce
+(67,  68, 40),   -- Parmesan
+(76,  68, 40),   -- Sourdough Bread
+(113, 68, 60),   -- Caesar Dressing
+(96,  68, 10),   -- Olive Oil
+(97,  68, 5),    -- Sea Salt
+(88,  68, 3),    -- Black Pepper
+
+-- DishID 69 | Duck Breast
+(12,  69, 250),  -- Duck Breast
+(51,  69, 200),  -- Sweet Potato
+(50,  69, 100),  -- Pak Choi
+(63,  69, 20),   -- Butter
+(141, 69, 80),   -- Cherries
+(121, 69, 80),   -- Beef Stock
+(33,  69, 10),   -- Garlic
+(97,  69, 5),    -- Sea Salt
+(88,  69, 3),    -- Black Pepper
+
+-- DishID 70 | Chicken Curry
+(7,   70, 200),  -- Chicken Breast
+(43,  70, 200),  -- Plum Tomatoes
+(64,  70, 100),  -- Double Cream
+(34,  70, 80),   -- Onion
+(33,  70, 15),   -- Garlic
+(91,  70, 10),   -- Cumin
+(90,  70, 10),   -- Paprika
+(92,  70, 5),    -- Turmeric
+(75,  70, 180),  -- Basmati Rice
+(80,  70, 1),    -- Naan Bread
+(115, 70, 40),   -- Mango Chutney
+(96,  70, 15),   -- Olive Oil
+(97,  70, 5),    -- Sea Salt
+
+-- DishID 71 | Spaghetti Carbonara
+(73,  71, 180),  -- Spaghetti
+(18,  71, 100),  -- Bacon Rashers
+(62,  71, 3),    -- Eggs
+(67,  71, 60),   -- Parmesan
+(88,  71, 5),    -- Black Pepper
+(97,  71, 5),    -- Sea Salt
+(96,  71, 10),   -- Olive Oil
+
+-- DishID 72 | Penne Arrabbiata
+(74,  72, 180),  -- Penne
+(43,  72, 200),  -- Plum Tomatoes
+(33,  72, 15),   -- Garlic
+(61,  72, 10),   -- Chilli
+(83,  72, 10),   -- Fresh Basil
+(96,  72, 20),   -- Olive Oil
+(97,  72, 5),    -- Sea Salt
+(88,  72, 3),    -- Black Pepper
+
+-- DishID 73 | Tagliatelle Bolognese
+(75,  73, 180),  -- Tagliatelle
+(3,   73, 200),  -- Beef Mince
+(34,  73, 80),   -- Onion
+(37,  73, 60),   -- Carrots
+(38,  73, 40),   -- Celery
+(33,  73, 10),   -- Garlic
+(43,  73, 150),  -- Plum Tomatoes
+(102, 73, 30),   -- Tomato Puree
+(125, 73, 100),  -- Red Wine
+(67,  73, 40),   -- Parmesan
+(96,  73, 15),   -- Olive Oil
+(97,  73, 5),    -- Sea Salt
+(88,  73, 3),    -- Black Pepper
+
+-- DishID 74 | Seafood Linguine
+(76,  74, 180),  -- Linguine
+(27,  74, 100),  -- Atlantic Prawns
+(28,  74, 100),  -- Mussels
+(29,  74, 80),   -- Clams
+(33,  74, 15),   -- Garlic
+(126, 74, 150),  -- White Wine
+(83,  74, 10),   -- Fresh Basil
+(97,  74, 10),   -- Extra Virgin Olive Oil
+(88,  74, 3),    -- Black Pepper
+
+-- DishID 75 | Truffle Mushroom Risotto
+(74,  75, 180),  -- Arborio Rice
+(41,  75, 150),  -- Wild Mushrooms
+(40,  75, 80),   -- Mushrooms
+(157, 75, 20),   -- Truffle
+(99,  75, 10),   -- Truffle Oil
+(67,  75, 60),   -- Parmesan
+(34,  75, 60),   -- Onion
+(33,  75, 10),   -- Garlic
+(123, 75, 150),  -- Vegetable Stock
+(63,  75, 30),   -- Butter
+(126, 75, 100),  -- White Wine
+(97,  75, 5),    -- Sea Salt
+(88,  75, 3),    -- Black Pepper
+
+-- DishID 76 | Pork Belly
+(13,  76, 350),  -- Pork Belly
+(52,  76, 250),  -- Rooster Potatoes
+(63,  76, 30),   -- Butter
+(71,  76, 50),   -- Milk
+(44,  76, 60),   -- Spinach
+(140, 76, 2),    -- Apples
+(127, 76, 150),  -- Cider
+(122, 76, 80),   -- Chicken Stock
+(97,  76, 5),    -- Sea Salt
+(88,  76, 3),    -- Black Pepper
+
+-- DishID 77 | Pork Tenderloin
+(14,  77, 250),  -- Pork Tenderloin
+(52,  77, 250),  -- Rooster Potatoes
+(64,  77, 100),  -- Double Cream
+(107, 77, 20),   -- Wholegrain Mustard
+(106, 77, 10),   -- Dijon Mustard
+(122, 77, 80),   -- Chicken Stock
+(63,  77, 20),   -- Butter
+(44,  77, 80),   -- Spinach
+(97,  77, 5),    -- Sea Salt
+(88,  77, 3),    -- Black Pepper
+
+-- DishID 78 | Pulled Pork Sandwich
+(17,  78, 200),  -- Pulled Pork
+(104, 78, 60),   -- BBQ Sauce
+(79,  78, 1),    -- Brioche Bun
+(111, 78, 60),   -- Coleslaw
+(52,  78, 200),  -- Rooster Potatoes
+(97,  78, 3),    -- Sea Salt
+
+-- DishID 79 | Pork Rack
+(16,  79, 450),  -- Pork Rack
+(118, 79, 60),   -- Apple Sauce
+(52,  79, 250),  -- Rooster Potatoes
+(54,  79, 80),   -- Broccoli
+(55,  79, 60),   -- Green Beans
+(63,  79, 20),   -- Butter
+(84,  79, 5),    -- Fresh Rosemary
+(97,  79, 5),    -- Sea Salt
+(88,  79, 3),    -- Black Pepper
+
+-- DishID 80 | Pork and Chorizo Stew
+(13,  80, 250),  -- Pork Belly
+(21,  80, 100),  -- Chorizo
+(43,  80, 200),  -- Plum Tomatoes
+(34,  80, 80),   -- Onion
+(33,  80, 10),   -- Garlic
+(59,  80, 80),   -- Red Pepper
+(122, 80, 150),  -- Chicken Stock
+(86,  80, 5),    -- Fresh Thyme
+(76,  80, 100),  -- Sourdough Bread
+(63,  80, 20),   -- Butter
+(97,  80, 5),    -- Sea Salt
+(88,  80, 3),    -- Black Pepper
+
+-- DishID 81 | Fish and Chips
+(24,  81, 220),  -- Haddock Fillet
+(52,  81, 250),  -- Rooster Potatoes
+(128, 81, 150),  -- Plain Flour
+(62,  81, 1),    -- Eggs
+(126, 81, 150),  -- Guinness
+(155, 81, 80),   -- Mushy Peas
+(111, 81, 40),   -- Tartare Sauce
+(100, 81, 200),  -- Vegetable Oil
+(97,  81, 5),    -- Sea Salt
+
+-- DishID 82 | Grilled Salmon
+(25,  82, 220),  -- Salmon Fillet
+(53,  82, 200),  -- New Potatoes
+(63,  82, 30),   -- Butter
+(85,  82, 10),   -- Fresh Dill
+(55,  82, 80),   -- Green Beans
+(56,  82, 60),   -- Asparagus
+(136, 82, 1),    -- Lemons
+(97,  82, 5),    -- Sea Salt
+(88,  82, 3),    -- Black Pepper
+
+-- DishID 83 | Seafood Chowder
+(23,  83, 100),  -- Cod Fillet
+(25,  83, 100),  -- Salmon Fillet
+(27,  83, 80),   -- Atlantic Prawns
+(28,  83, 80),   -- Mussels
+(64,  83, 200),  -- Double Cream
+(34,  83, 60),   -- Onion
+(39,  83, 60),   -- Leek
+(37,  83, 60),   -- Carrots
+(124, 83, 150),  -- Fish Stock
+(52,  83, 100),  -- Rooster Potatoes
+(63,  83, 20),   -- Butter
+(77,  83, 80),   -- Brown Bread
+(97,  83, 5),    -- Sea Salt
+(88,  83, 3),    -- Black Pepper
+
+-- ============================================================
+-- ADDITIONAL DISHES
+-- ============================================================
+
+-- DishID 101 | Lamb Shank (L1)
+(22,  101, 400), -- Lamb Shank
+(52,  101, 250), -- Rooster Potatoes
+(63,  101, 30),  -- Butter
+(64,  101, 60),  -- Double Cream
+(37,  101, 100), -- Carrots
+(84,  101, 10),  -- Fresh Rosemary
+(121, 101, 100), -- Beef Stock
+(125, 101, 100), -- Red Wine
+(97,  101, 5),   -- Sea Salt
+(88,  101, 3),   -- Black Pepper
+
+-- DishID 102 | Seafood Platter (L2)
+(27,  102, 150), -- Atlantic Prawns
+(26,  102, 100), -- Smoked Salmon
+(31,  102, 120), -- Crab Claws
+(32,  102, 6),   -- Oysters
+(77,  102, 80),  -- Brown Bread
+(63,  102, 40),  -- Butter
+(136, 102, 1),   -- Lemons
+(97,  102, 5);   -- Sea Salt
+
+-- Customers
+INSERT INTO Customers (CustFName, CustLName, PhoneNum, Email, Age, FavoriteDish, FavoriteEmployee)
+VALUES
+('Liam',      'Murphy',      '0851234567', 'liam.murphy@gmail.com',        34, 87,  12),
+('Aoife',     'Kelly',       '0872345678', 'aoife.kelly@hotmail.com',       28, 3,   7),
+('Conor',     'Ryan',        '0863456789', 'conor.ryan@gmail.com',          45, 56,  23),
+('Siobhan',   'OBrien',      '0854567890', 'siobhan.obrien@yahoo.com',      31, 14,  38),
+('Padraig',   'Walsh',       '0875678901', 'padraig.walsh@gmail.com',       52, 72,  5),
+('Niamh',     'Smith',       '0866789012', 'niamh.smith@hotmail.com',       26, 99,  17),
+('Eoin',      'OConnor',     '0857890123', 'eoin.oconnor@gmail.com',        39, 41,  2),
+('Ciara',     'Byrne',       '0878901234', 'ciara.byrne@yahoo.com',         22, 8,   31),
+('Declan',    'ONeill',      '0869012345', 'declan.oneill@gmail.com',       47, 63,  14),
+('Roisin',    'McCarthy',    '0850123456', 'roisin.mccarthy@hotmail.com',   33, 27,  9),
+('Fergal',    'Doyle',       '0871234560', 'fergal.doyle@gmail.com',        29, 5,   36),
+('Aisling',   'Hughes',      '0862345671', 'aisling.hughes@yahoo.com',      41, 82,  21),
+('Sean',      'Farrell',     '0853456782', 'sean.farrell@gmail.com',        55, 19,  3),
+('Orla',      'Quinn',       '0874567893', 'orla.quinn@hotmail.com',        24, 47,  28),
+('Brendan',   'Gallagher',   '0865678904', 'brendan.gallagher@gmail.com',   37, 91,  16),
+('Sinead',    'Doherty',     '0856789015', 'sinead.doherty@yahoo.com',      30, 33,  40),
+('Cillian',   'Kennedy',     '0877890126', 'cillian.kennedy@gmail.com',     43, 68,  11),
+('Grainne',   'Lynch',       '0868901237', 'grainne.lynch@hotmail.com',     27, 12,  25),
+('Darragh',   'Murray',      '0859012348', 'darragh.murray@gmail.com',      50, 76,  6),
+('Fiona',     'OSullivan',   '0870123459', 'fiona.osullivan@yahoo.com',     35, 24,  33),
+('Ronan',     'Fitzpatrick', '0861234560', 'ronan.fitzpatrick@gmail.com',   48, 55,  19),
+('Caoimhe',   'Brennan',     '0852345671', 'caoimhe.brennan@hotmail.com',   23, 38,  8),
+('Diarmuid',  'Power',       '0873456782', 'diarmuid.power@gmail.com',      36, 100, 34),
+('Clodagh',   'Nolan',       '0864567893', 'clodagh.nolan@yahoo.com',       29, 7,   1),
+('Cathal',    'Fleming',     '0855678904', 'cathal.fleming@gmail.com',      53, 44,  27),
+('Aoibhe',    'Sheridan',    '0876789015', 'aoibhe.sheridan@hotmail.com',   21, 61,  15),
+('Killian',   'OReilly',     '0867890126', 'killian.oreilly@gmail.com',     44, 29,  39),
+('Sorcha',    'Daly',        '0858901237', 'sorcha.daly@yahoo.com',         32, 83,  22),
+('Tadhg',     'Healy',       '0879012348', 'tadhg.healy@gmail.com',         57, 16,  4),
+('Maeve',     'Burke',       '0860123459', 'maeve.burke@hotmail.com',       26, 52,  30),
+('Cormac',    'Moran',       '0851234568', 'cormac.moran@gmail.com',        40, 93,  13),
+('Eimear',    'Connolly',    '0872345679', 'eimear.connolly@yahoo.com',     34, 37,  37),
+('Ruairi',    'Kavanagh',    '0863456780', 'ruairi.kavanagh@gmail.com',     49, 71,  20),
+('Niamh',     'Boyle',       '0854567891', 'niamh.boyle@hotmail.com',       25, 9,   10),
+('Donagh',    'OCallaghan',  '0875678902', 'donagh.ocallaghan@gmail.com',   38, 48,  29),
+('Emer',      'Reilly',      '0866789013', 'emer.reilly@yahoo.com',         31, 85,  18),
+('Cian',      'Higgins',     '0857890124', 'cian.higgins@gmail.com',        46, 22,  35),
+('Sadhbh',    'OGorman',     '0878901235', 'sadhbh.ogorman@hotmail.com',    27, 64,  7),
+('Oisin',     'Dunne',       '0869012346', 'oisin.dunne@gmail.com',         42, 31,  24),
+('Laoise',    'Whelan',      '0850123457', 'laoise.whelan@yahoo.com',       29, 97,  32),
+('Eanna',     'Stapleton',   '0871234561', 'eanna.stapleton@gmail.com',     54, 13,  6),
+('Riona',     'Costello',    '0862345672', 'riona.costello@hotmail.com',    23, 58,  26),
+('Fionn',     'McDonagh',    '0853456783', 'fionn.mcdonagh@gmail.com',      37, 40,  40),
+('Ailbhe',    'Cronin',      '0874567894', 'ailbhe.cronin@yahoo.com',       30, 77,  3),
+('Senan',     'Forde',       '0865678905', 'senan.forde@gmail.com',         45, 25,  17),
+('Meadhbh',   'Regan',       '0856789016', 'meadhbh.regan@hotmail.com',     28, 89,  11),
+('Tiarna',    'Foley',       '0877890127', 'tiarna.foley@gmail.com',        33, 6,   36),
+('Caoilfhinn','Lyons',       '0868901238', 'caoilfhinn.lyons@yahoo.com',    51, 42,  21),
+('Eoghan',    'Prendergast', '0859012349', 'eoghan.prendergast@gmail.com',  39, 74,  9),
+('Blathnaid', 'Smyth',       '0870123450', 'blathnaid.smyth@hotmail.com',   26, 18,  38),
+('James',     'OBrien',      '0861234561', 'james.obrien@gmail.com',        43, 96,  14),
+('Emma',      'Walsh',       '0852345672', 'emma.walsh@yahoo.com',          31, 35,  28),
+('Jack',      'Ryan',        '0873456783', 'jack.ryan@gmail.com',           56, 50,  2),
+('Sophie',    'Kelly',       '0864567894', 'sophie.kelly@hotmail.com',      24, 11,  33),
+('Harry',     'Murphy',      '0855678905', 'harry.murphy@gmail.com',        47, 67,  19),
+('Emily',     'Smith',       '0876789016', 'emily.smith@yahoo.com',         29, 28,  5),
+('Charlie',   'ONeill',      '0867890127', 'charlie.oneill@gmail.com',      35, 90,  31),
+('Olivia',    'Byrne',       '0858901238', 'olivia.byrne@hotmail.com',      22, 43,  16),
+('Noah',      'McCarthy',    '0879012349', 'noah.mccarthy@gmail.com',       48, 15,  39),
+('Isabella',  'Doyle',       '0860123450', 'isabella.doyle@yahoo.com',      34, 79,  23),
+('Lucas',     'Hughes',      '0851234569', 'lucas.hughes@gmail.com',        41, 2,   8),
+('Mia',       'Farrell',     '0872345670', 'mia.farrell@hotmail.com',       27, 57,  34),
+('Oliver',    'Quinn',       '0863456781', 'oliver.quinn@gmail.com',        52, 34,  12),
+('Amelia',    'Gallagher',   '0854567892', 'amelia.gallagher@yahoo.com',    30, 88,  27),
+('Elijah',    'Doherty',     '0875678903', 'elijah.doherty@gmail.com',      44, 21,  4),
+('Ava',       'Kennedy',     '0866789014', 'ava.kennedy@hotmail.com',       26, 66,  37),
+('William',   'Lynch',       '0857890125', 'william.lynch@gmail.com',       38, 49,  15),
+('Sophia',    'Murray',      '0878901236', 'sophia.murray@yahoo.com',       32, 92,  30),
+('James',     'OSullivan',   '0869012347', 'james.osullivan@gmail.com',     55, 10,  22),
+('Charlotte', 'Fitzpatrick', '0850123458', 'charlotte.fitzpatrick@hotmail.com', 23, 73, 1),
+('Benjamin',  'Brennan',     '0871234562', 'benjamin.brennan@gmail.com',    46, 36,  18),
+('Isla',      'Power',       '0862345673', 'isla.power@yahoo.com',          28, 81,  35),
+('Mason',     'Nolan',       '0853456784', 'mason.nolan@gmail.com',         40, 17,  10),
+('Grace',     'Fleming',     '0874567895', 'grace.fleming@hotmail.com',     33, 95,  26),
+('Logan',     'Sheridan',    '0865678906', 'logan.sheridan@gmail.com',      50, 4,   40),
+('Lily',      'OReilly',     '0856789017', 'lily.oreilly@yahoo.com',        25, 62,  13),
+('Ethan',     'Daly',        '0877890128', 'ethan.daly@gmail.com',          43, 26,  29),
+('Hannah',    'Healy',       '0868901239', 'hannah.healy@hotmail.com',      37, 84,  7),
+('Alexander', 'Burke',       '0859012340', 'alexander.burke@gmail.com',     29, 39,  20),
+('Zoe',       'Moran',       '0870123451', 'zoe.moran@yahoo.com',           48, 70,  32),
+('Daniel',    'Connolly',    '0861234562', 'daniel.connolly@gmail.com',     31, 23,  6),
+('Chloe',     'Kavanagh',    '0852345673', 'chloe.kavanagh@hotmail.com',    26, 98,  25),
+('Michael',   'Boyle',       '0873456784', 'michael.boyle@gmail.com',       53, 45,  38),
+('Ella',      'OCallaghan',  '0864567895', 'ella.ocallaghan@yahoo.com',     22, 59,  11),
+('Ryan',      'Reilly',      '0855678906', 'ryan.reilly@gmail.com',         36, 80,  3),
+('Aria',      'Higgins',     '0876789017', 'aria.higgins@hotmail.com',      44, 32,  24),
+('Dylan',     'OGorman',     '0867890128', 'dylan.ogorman@gmail.com',       27, 94,  16),
+('Freya',     'Dunne',       '0858901239', 'freya.dunne@yahoo.com',         39, 1,   39),
+('Luke',      'Whelan',      '0879012340', 'luke.whelan@gmail.com',         32, 53,  9),
+('Zara',      'Stapleton',   '0860123451', 'zara.stapleton@hotmail.com',    57, 69,  34),
+('Joshua',    'Costello',    '0851234560', 'joshua.costello@gmail.com',     24, 20,  2),
+('Penelope',  'McDonagh',    '0872345671', 'penelope.mcdonagh@yahoo.com',   41, 86,  28),
+('Thomas',    'Cronin',      '0863456782', 'thomas.cronin@gmail.com',       35, 46,  17),
+('Scarlett',  'Forde',       '0854567893', 'scarlett.forde@hotmail.com',    28, 75,  36),
+('Henry',     'Regan',       '0875678904', 'henry.regan@gmail.com',         49, 30,  5),
+('Violet',    'Foley',       '0866789015', 'violet.foley@yahoo.com',        33, 78,  21),
+('Sebastian', 'Lyons',       '0857890126', 'sebastian.lyons@gmail.com',     45, 54,  14),
+('Aurora',    'Prendergast', '0878901237', 'aurora.prendergast@hotmail.com',27, 65,  33),
+('Owen',      'Smyth',       '0869012348', 'owen.smyth@gmail.com',          38, 37,  8);
