@@ -4,11 +4,37 @@ GO
 /* 
 	Item A 
 */
+	--A Salary for each chef
+CREATE FUNCTION dbo.GetChefSalary()
+RETURNS TABLE
+AS
+RETURN
+(
+	SELECT ChefID, c.EmployeeID, FORMAT(HourlyRate, 'C2', 'EN-GB') AS HourlyRate, FORMAT(HourlyRate * 40 * 52, 'C2', 'EN-GB') AS Salary
+	FROM Chefs c
+	INNER JOIN Employees e
+		ON e.EmployeeID = c.EmployeeID
+)
+
+SELECT * FROM dbo.GetChefSalary()
 
 
 /* 
 	Item B
 */
+	--B details for each kitchen
+CREATE FUNCTION dbo.GetKitchenDetails(@KitchenID int)
+RETURNS TABLE 
+AS
+RETURN
+(
+	SELECT KitchenID, LocationID, NumStoves, HeadChef, SousChef, MinNumCooks
+	FROM KitchenDetails
+	WHERE @KitchenID = KitchenID
+)
+
+SELECT * FROM dbo.GetKitchenDetails(1)
+SELECT * FROM dbo.GetKitchenDetails(2)
 
 
 /* 
