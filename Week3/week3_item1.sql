@@ -22,13 +22,13 @@ GO
 
 
 /* 
-	Item E: Drops the function if it already ecists before recrating it.
+	Item E: Returns a count of patrons who revieced their favorite table vs those who did not.
 */
+
+-- Drops the function if it already ecists before recrating it.
 DROP FUNCTION IF EXISTS dbo.fn_FavoriteTable;
 GO
 
--- Returns a count of patrons who revieced their favorite table vs those 
--- who did not.
 CREATE FUNCTION dbo.fn_FavoriteTable()
 RETURNS TABLE 
 AS 
