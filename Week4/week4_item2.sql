@@ -1,3 +1,6 @@
+USE Restaurant;
+GO
+
 /** Item 2 Indexes**/
 -- A.
 
