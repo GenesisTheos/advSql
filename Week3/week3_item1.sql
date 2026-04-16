@@ -56,9 +56,26 @@ SELECT * FROM dbo.GetKitchenDetails(2)
 
 
 /* 
-	Item C 
+	Item C: Selecting those colums from the "DISHES" table.
 */
+DROP FUNCTION IF EXISTS dbo.fn_MenuPrice;
+GO
 
+CREATE FUNCTION dbo.fn_MenuPrice()
+RETURNS TABLE 
+AS 
+RETURN
+(
+	SELECT 
+		DishName AS [Menu Price], 
+		FORMAT(Price, 'C2', 'EN-GB') AS Price
+	FROM Dishes
+);
+GO
+
+-- Testing
+SELECT *
+FROM dbo.fn_MenuPrice()
 
 /* 
 	Item D : Shows subtotals per channel + overall grand total.
