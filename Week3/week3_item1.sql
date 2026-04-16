@@ -45,7 +45,20 @@ SELECT * FROM dbo.GetKitchenDetails(2)
 /* 
 	Item D 
 */
-
+--Shows subtotals per channel + overall grand total
+SELECT
+    COALESCE(OrderType, 'All Channels') AS OrderType,
+    SUM(OrderTotal) AS total_amount,
+    COUNT(*) AS order_count
+FROM dbo.Orders
+GROUP BY GROUPING SETS (
+(OrderType),
+-- Grand total across all order types
+()
+)
+ORDER BY
+    GROUPING(OrderType) ASC,
+    total_amount DESC;
 
 /* 
 	Item E: Returns a count of patrons who revieced their favorite table vs those who did not.
