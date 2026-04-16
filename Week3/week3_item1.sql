@@ -80,6 +80,10 @@ FROM dbo.fn_MenuPrice()
 /* 
 	Item D : Shows subtotals per channel + overall grand total.
 */
+DROP FUNCTION IF EXISTS dbo.fn_OrderDistribution;
+GO
+
+
 CREATE FUNCTION dbo.fn_OrderDistribution()
 RETURNS TABLE
 AS
@@ -95,8 +99,11 @@ RETURN
         ()  -- Grand total across all order types
     )
 );
+GO
+
 SELECT *
 FROM dbo.fn_OrderDistribution()
+	
 /* 
 	Item E: Returns a count of patrons who revieced their favorite table vs those who did not.
 */
