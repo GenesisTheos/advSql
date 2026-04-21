@@ -37,3 +37,43 @@ ON Dishes (Price);
 
 
 -- E.
+/** Item P Indexes **/
+-- Index on CustID
+-- Customers frequently look up, manage, or cancel their own reservations.
+CREATE NONCLUSTERED INDEX IX_Reservations_CustID
+ON Reservations(CustID);
+
+-- Index on LocationID
+-- Reservations are tied to a specific restaurant location.
+CREATE NONCLUSTERED INDEX IX_Reservations_LocationID
+ON Reservations(LocationID);
+
+-- Index on TablePreference
+-- Indexing TablePreference allows fast lookups to check if a preferred
+-- table is available or already taken.
+CREATE NONCLUSTERED INDEX IX_Reservations_TablePreference
+ON Reservations(TablePreference);
+
+-- Index on TableChosen
+-- Staff need to quickly see which table was actually assigned to a reservation,
+-- especially when a customer cannot get their preferred table.
+CREATE NONCLUSTERED INDEX IX_Reservations_TableChosen
+ON Reservations(TableChosen);
+
+-- Index on ResDateTime
+-- Indexing ResDateTime supports fast range queries and chronological lookups.
+CREATE NONCLUSTERED INDEX IX_Reservations_ResDateTime
+ON Reservations(ResDateTime);
+
+-- Index on RecurringReservation
+-- Indexing this column allows staff to quickly retrieve all recurring bookings
+-- for reminders, scheduling, or management purposes.
+CREATE NONCLUSTERED INDEX IX_Reservations_RecurringReservation
+ON Reservations(RecurringReservation);
+
+-- Index on ReservationStatus
+-- Almost every active query will filter by status.
+-- Indexing ReservationStatus avoids full table scans when excluding
+-- cancelled or inactive reservations.
+CREATE NONCLUSTERED INDEX IX_Reservations_ReservationStatus
+ON Reservations(ReservationStatus);
