@@ -113,15 +113,15 @@ EXEC spN_GetDishes 18.99, 1
 
 
 -- B. INSERT
-IF OBJECT_ID('spN_InsertDishes') IS NOT NULL
-	DROP PROC spN_InsertDishes;
+DROP PROC IF EXISTS spN_InsertDishes;
 GO
 
 CREATE PROC spN_InsertDishes
 (
     @LocationID  INT,
     @DishName    VARCHAR(100),
-    @Description VARCHAR(255),
+    --Required to have a description of the dish, but can be left blank if not available, just bc it can't be null
+    @Description VARCHAR(255),   
     @Price       DECIMAL(5,2),
     @Active      BIT
 )
@@ -130,10 +130,10 @@ BEGIN
     INSERT INTO Dishes (LocationID, DishName, Description, Price, Active)
     VALUES (@LocationID, @DishName, @Description, @Price, @Active)
 
-    SELECT DishName, Description, FORMAT(Price, 'C2', 'EN-GB') AS Price, Active
+    SELECT DishID, DishName, FORMAT(Price, 'C2', 'EN-GB') AS Price, Active
     FROM Dishes
-    WHERE DishName = @DishName
-END
+    WHERE DishID = SCOPE_IDENTITY()
+END;
 GO
 EXEC spN_InsertDishes 1, 'Beef Stew', 'Traditional Irish beef stew', 14.99, 1
 
