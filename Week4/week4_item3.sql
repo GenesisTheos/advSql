@@ -64,7 +64,7 @@ CREATE PROC spN_GetDishes
 )
 AS
 BEGIN
-	SELECT DishID, DishName, Description, Price
+	SELECT DishID, DishName, Description, Format(Price, 'C2', 'EN-GB') AS DishPrice
 	FROM Dishes
 	WHERE Price < @ChosenPrice and @CurrentlyActive = 1
 END;
