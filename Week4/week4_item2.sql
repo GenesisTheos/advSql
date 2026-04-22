@@ -30,8 +30,14 @@ ON Dishes (LocationID);
 CREATE NONCLUSTERED INDEX IX_Dishes_Price
 ON Dishes (Price);
 
--- C.
+-- C. 
+-- Index on DishID on Recipes.
+CREATE NONCLUSTERED INDEX IX_Recipes_DishID
+ON Recipes (DishID);
 
+-- Index on DishID on Recipes.
+CREATE NONCLUSTERED INDEX IX_Recipes_IngredientID
+ON Recipes (IngredientID);
 
 -- D.
 
