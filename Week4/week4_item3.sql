@@ -19,7 +19,25 @@ END;
 EXEC spN_GetCustomers '0863456789'
 
 -- B.
+CREATE PROC spN_InsertCustomers
+(
+    @CustFName VARCHAR(50),
+    @CustLName VARCHAR(50),
+    @PhoneNum  VARCHAR(20),
+    @Email     VARCHAR(100),
+    @Age       INT
+)
+AS
+BEGIN
+    INSERT INTO Customers (CustFName, CustLName, PhoneNum, Email, Age)
+    VALUES (@CustFName, @CustLName, @PhoneNum, @Email, @Age)
 
+    SELECT CustFName + ' ' + CustLName AS CustomerName, PhoneNum, Email, Age
+    FROM Customers
+    WHERE PhoneNum = @PhoneNum
+END;
+GO
+EXEC spN_InsertCustomers 'Liam', 'Murphy', '0851234567', 'liam.murphy@gmail.com', 34
 
 -- C.
 
@@ -54,7 +72,25 @@ END;
 EXEC spN_GetDishes 18.99, 1
 
 -- B.
+CREATE PROC spN_InsertDishes
+(
+    @LocationID  INT,
+    @DishName    VARCHAR(100),
+    @Description VARCHAR(255),
+    @Price       DECIMAL(5,2),
+    @Active      BIT
+)
+AS
+BEGIN
+    INSERT INTO Dishes (LocationID, DishName, Description, Price, Active)
+    VALUES (@LocationID, @DishName, @Description, @Price, @Active)
 
+    SELECT DishName, Description, FORMAT(Price, 'C2', 'EN-GB') AS Price, Active
+    FROM Dishes
+    WHERE DishName = @DishName
+END;
+GO
+EXEC spN_InsertDishes 1, 'Beef Stew', 'Traditional Irish beef stew', 14.99, 1
 
 -- C.
 
