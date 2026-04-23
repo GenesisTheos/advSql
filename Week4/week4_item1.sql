@@ -120,3 +120,31 @@ EXECUTE spN_KitchenDetails;
 EXECUTE spN_KitchenDetails @ChefID = 1;
 
 -- E.
+IF OBJECT_ID('spN_CustomerDetails') IS NOT NULL
+	DROP PROCEDURE spN_CustomerDetails;
+GO
+
+CREATE PROC spN_CustomerDetails
+   -- pass a CustID for a specific customer
+   @CustID INT = NULL  
+AS
+BEGIN
+    IF NOT EXISTS( SELECT * FROM Customers c WHERE c.CustID= @CustID)
+       AND @CustID IS NOT NULL
+       THROW 50005, 'The specified CustID value does not exists in the Customer Table.',1;
+   
+   ELSE --The CustID exists 
+        SELECT *
+        FROM Customers c 
+        WHERE @CustID IS NULL OR c.CustID= @CustID
+        ORDER BY CustID;
+
+        
+END;
+GO
+    --TESTING FOR ALL CUSTOMER 
+
+   EXECUTE spN_CustomerDetails
+
+   --TESTING FOR A SPECIFIC CUSTOMER
+   EXECUTE spN_CustomerDetails @CustID = 1;
