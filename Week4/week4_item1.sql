@@ -19,8 +19,31 @@ END;
 
 EXECUTE spN_ChefDetails;
 
--- B.
+-- B. Returns recipe items with the total ingredient cost per dish.
+IF OBJECT_ID('spN_GetRecipeDetails') IS NOT NULL
+	DROP PROCEDURE spN_GetRecipeDetails;
+GO
+CREATE PROCEDURE spN_GetRecipeDetails 
+AS
+BEGIN 
+	SELECT DISTINCT
+		d.DishName, 
+		i.IngredientName,
+		r.IngredientQuantity,
+		r.Unit, 
+		-- Sums ingredients cost per dish (quanity/ 100 * unit price).
+		FORMAT(
+				SUM((r.IngredientQuantity/100) * i.IngredientUnitPrice) 
+				OVER(PARTITION BY r.DishID), 'C2' , 'EN-GB'
+			) AS [Total Recipe Cost]
+	FROM Recipes r
+	JOIN Ingredients i ON r.IngredientID = i.IngredientID
+	JOIN Dishes d ON r.DishID = d.DishID 
+	ORDER BY d.DishName, i.IngredientName;
+END
+GO
 
+EXEC spN_GetRecipeDetails;
 
 -- C.
 CREATE PROC spN_RecipeDetails
