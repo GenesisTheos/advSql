@@ -1,13 +1,14 @@
 USE Restaurant;
 GO
 
-/** Item 1 5 Stored Procs **/
--- A.
---1a creates a stored proc to get the chefs who have a preferred vendor and the cost of those ingredients from the vendor
+-- A. creates a stored proc to get the chefs who have a preferred vendor and the cost of those ingredients from the vendor
+IF OBJECT_ID('spN_ChefDetails') IS NOT NULL
+	DROP PROCEDURE spN_ChefDetails;
+GO
 CREATE PROC spN_ChefDetails
 AS
 BEGIN
-	SELECT ChefID, IngredientName, i.SupplierID, FORMAT(i.IngredientPrice, 'C2', 'EN-GB') AS Price
+	SELECT ChefID, IngredientName, i.SupplierID, FORMAT(i.IngredientUnitPrice, 'C2', 'EN-GB') AS Price
 	FROM Chefs c
 	INNER JOIN Supplier s
 		ON c.PreferredSupplier = s.SupplierID
@@ -16,6 +17,7 @@ BEGIN
 	WHERE C.PreferredSupplier IS NOT NULL
 	ORDER BY ChefID
 END;
+GO
 
 EXECUTE spN_ChefDetails;
 
@@ -46,6 +48,9 @@ GO
 EXEC spN_GetRecipeDetails;
 
 -- C.
+IF OBJECT_ID('spN_RecipeDetails') IS NOT NULL
+	DROP PROCEDURE spN_RecipeDetails;
+GO
 CREATE PROC spN_RecipeDetails
 AS
 BEGIN
@@ -70,6 +75,9 @@ GO
 EXECUTE spN_RecipeDetails;
 
 -- D.
+IF OBJECT_ID('spN_KitchenDetails') IS NOT NULL
+	DROP PROCEDURE spN_KitchenDetails;
+GO
 CREATE PROC spN_KitchenDetails
    -- pass a ChefID for a specific chef
    @ChefID INT = NULL  
