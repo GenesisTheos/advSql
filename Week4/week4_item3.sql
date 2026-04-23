@@ -86,6 +86,45 @@ EXEC spN_UpdateCustomer 1, '0812345678', 'emaple@gmail.com', 2;
 
 -- D. DELETE
 
+IF OBJECT_ID('spN_DeleteCustomer') IS NOT NULL
+	DROP PROC spN_DeleteCustomer;
+GO
+
+CREATE PROC spN_DeleteCustomer 
+	@CustID int
+AS
+BEGIN 
+	IF EXISTS (SELECT * FROM Customers c WHERE c.CustID=@CustID)
+	BEGIN
+
+	--Deleting the records of that @CustID in other tablets first
+	--Where the customer is a Foreing Key
+	--FROM ORDERS
+	DELETE FROM Orders
+	OUTPUT deleted.* --To show the rows deleted 
+	WHERE CustID = @CustID
+
+	--FROM RESERVATIONS 
+	DELETE FROM Reservations
+	OUTPUT deleted.*
+	WHERE CustID =  @CustID
+
+	--Deliting The customer from the Customer table 
+	DELETE FROM Customers
+	OUTPUT deleted.*
+	WHERE CustID = @CustID
+	END;
+	ELSE
+	THROW 50006, 'The specified CustID value does not exists in the Customer Table.',1;
+END
+GO 
+EXECUTE spN_DeleteCustomer @CustID = 100;
+
+
+
+
+
+
 
 
 -- FOR TABLE 2
@@ -171,3 +210,52 @@ GO
 EXEC spN_UpdateDishes 1, 'Grill Cheese', 18.99 , 1;
 
 -- D. DELETE
+IF OBJECT_ID('spN_DeleteDishes') IS NOT NULL
+	DROP PROC spN_DeleteDishes;
+GO
+
+CREATE PROC spN_DeleteDishes 
+	@DishID int
+AS
+BEGIN 
+	IF EXISTS (SELECT * FROM Dishes WHERE DishID = @DishID )
+	BEGIN
+
+	--Deleting the records of that @DishID in other tablets first
+	--Where the dishes is a Foreing Key
+	--FROM CUSTOMER
+
+	--Using the spN_DeleteCustomer
+
+	DECLARE @CustID int
+	SELECT @CustID = CustID
+	FROM Customers
+	WHERE FavoriteDish = @DishID
+
+	EXECUTE spN_DeleteCustomer @CustID;
+
+
+	--FROM RECIPIES
+	DELETE FROM Recipes
+	OUTPUT deleted.*
+	WHERE DishID =  @DishID
+
+
+	--Deliting The Dish from the Dishes table 
+	DELETE FROM Dishes
+	OUTPUT deleted.*
+	WHERE dishID = @DishID
+
+	END;
+	ELSE
+	THROW 50007, 'The specified DishID value does not exists in the Dishes Table.',1;
+END
+GO 
+--TESTING
+EXECUTE spN_DeleteDishes @DishID = 90;
+
+
+
+
+
+
