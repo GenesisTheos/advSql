@@ -40,7 +40,19 @@ CREATE NONCLUSTERED INDEX IX_Recipes_IngredientID
 ON Recipes (IngredientID);
 
 -- D.
+/** Item L Indexes: ORDERS **/
 
+--Index on CustID
+CREATE NONCLUSTERED INDEX IX_Orders_CustID
+	ON Orders(CustID);
+
+--Index on EmployeeID
+CREATE NONCLUSTERED INDEX IX_Orders_EmployeeID
+	ON Orders(EmployeeID);
+
+--Index on LocationID
+CREATE NONCLUSTERED INDEX IX_Orders_LocationID
+	ON Orders(LocationID);
 
 -- E.
 /** Item P Indexes **/
