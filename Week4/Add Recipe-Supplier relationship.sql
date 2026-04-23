@@ -1,9 +1,13 @@
+USE Restaurant;
+GO
 ALTER TABLE Ingredients
 ADD SupplierID INT NULL;
+GO
 
 ALTER TABLE Ingredients
 ADD CONSTRAINT FK_Ingredients_Supplier
 FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID);
+GO
 
 -- Meat (Dawn Meats = 2, Carbury Meats = 3)
 UPDATE Ingredients SET SupplierID = 2 WHERE IngredientName IN ('Beef Sirloin', 'Beef Ribeye', 'Beef Mince', 'Beef Short Rib', 'Beef Cheek', 'Beef Fillet', 'Lamb Shank');
