@@ -1,0 +1,819 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/29/2026 7:14:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ADVSQL"
+  DTS:CreatorName="ADVSQL\SQL"
+  DTS:DTSID="{5FF27F34-77AB-4D14-BD94-11D3B6DE4172}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{6C7C09AE-F30A-4DA4-89DA-1571DD9B517A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ADVSQL.AdventureWorks2019.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BFCBD61F-9C74-46E1-B40E-4F960B9705B5}"
+      DTS:ObjectName="ADVSQL.AdventureWorks2019.sa">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source=" + @[User::ServerName] + ";Initial Catalog=" + @[User::DatabaseName] + ";Provider=SQLNCLI11.1;Integrated Security=SSPI;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorks2019;Provider=SQLNCLI11.1;Integrated Security=SSPI;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CurrencyRates_FileConnection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9F39A3F7-7769-4FD1-AE34-64DD5B4A91DA}"
+      DTS:ObjectName="CurrencyRates_FileConnection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FullFilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="RaggedRight"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\SQL\Desktop\FinalProjectSSISFiledLoad\SSIS File Load.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="10"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:ObjectName="AverageRateRaw"
+              DTS:DTSID="{31E9F245-E1A9-4C79-86C8-E9A955AD61BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="3"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:ObjectName="CurrencyCodeRaw"
+              DTS:DTSID="{4B29D3EF-1CED-4E17-A6AF-69C55BFBAFC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="7"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:ObjectName="DateRaw"
+              DTS:DTSID="{86BBE6EC-45C0-449E-ADD7-2ACE0D0E7E24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="4"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:ObjectName="TimeRaw"
+              DTS:DTSID="{6C676CEE-311D-416A-B0C6-241716D760D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:ObjectName="EndOfTheDayRateRaw"
+              DTS:DTSID="{C9241168-D5BB-4181-8B4E-09BD9C5CA0A3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4CDFDE7C-24EA-4071-A87C-6D7DAD8D2D51}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DatabaseName">
+      <DTS:VariableValue
+        DTS:DataType="8">AdventureWorks2019</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{930A5AE2-A760-40AD-9194-CFDEE4DA0D6F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FullFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\SQL\Desktop\FinalProjectSSISFiledLoad\SSIS File Load.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DB2137B9-C336-49C2-A72F-2D85BBF58C12}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8">.</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Currency Rates From File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E200B0F7-6F85-4D1A-9AF2-B1BB58376D1A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Currency Rates From File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Currency Rates From File\Clean and Convert Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Clean and Convert Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input].Columns[AverageRateRaw]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="AverageRateRaw"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[AverageRateRaw]" />
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input].Columns[CurrencyCodeRaw]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="CurrencyCodeRaw"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[CurrencyCodeRaw]" />
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input].Columns[DateRaw]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DateRaw"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[DateRaw]" />
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input].Columns[TimeRaw]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="TimeRaw"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[TimeRaw]" />
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input].Columns[EndOfTheDayRateRaw]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="EndOfTheDayRateRaw"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[EndOfTheDayRateRaw]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[AverageRate]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[AverageRate]"
+                      name="AverageRate"
+                      precision="18"
+                      scale="9"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,18,9)[TRIM](#{Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[AverageRateRaw]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,18,9)TRIM(AverageRateRaw)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[CurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[CurrencyCode]"
+                      name="CurrencyCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,3,1252)[TRIM](#{Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[CurrencyCodeRaw]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,3,1252)TRIM(CurrencyCodeRaw)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[CurrencyDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[CurrencyDate]"
+                      name="CurrencyDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)([TRIM](#{Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[DateRaw]}) + " " + [TRIM](#{Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[TimeRaw]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(TRIM(DateRaw) + " " + TRIM(TimeRaw))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[EndOfDayRate]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[EndOfDayRate]"
+                      name="EndOfDayRate"
+                      precision="18"
+                      scale="9"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,18,9)[TRIM](#{Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[EndOfTheDayRateRaw]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,18,9)TRIM(EndOfTheDayRateRaw)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Into Currency Rates Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SSIS_File_Load]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ADVSQL.AdventureWorks2019.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[ADVSQL.AdventureWorks2019.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].Columns[AverageRate]"
+                      cachedDataType="numeric"
+                      cachedName="AverageRate"
+                      cachedPrecision="18"
+                      cachedScale="9"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[AverageRate]"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].Columns[CurrencyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="CurrencyCode"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyCode]"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[CurrencyCode]" />
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].Columns[CurrencyDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CurrencyDate"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyDate]"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[CurrencyDate]" />
+                    <inputColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].Columns[EndOfDayRate]"
+                      cachedDataType="numeric"
+                      cachedName="EndOfDayRate"
+                      cachedPrecision="18"
+                      cachedScale="9"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output].Columns[EndOfDayRate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[AverageRate]"
+                      dataType="numeric"
+                      name="AverageRate"
+                      precision="18"
+                      scale="9" />
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="CurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyDate]"
+                      dataType="dbTimeStamp"
+                      name="CurrencyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input].ExternalColumns[EndOfDayRate]"
+                      dataType="numeric"
+                      name="EndOfDayRate"
+                      precision="18"
+                      scale="9" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Currency Rates From File\Read Currency Rate File"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Read Currency Rate File"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Currency Rates From File\Read Currency Rate File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CurrencyRates_FileConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[CurrencyRates_FileConnection]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[AverageRateRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[AverageRateRaw]"
+                      length="15"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[AverageRateRaw]"
+                      name="AverageRateRaw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[DateRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[DateRaw]"
+                      length="10"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[DateRaw]"
+                      name="DateRaw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[TimeRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[TimeRaw]"
+                      length="10"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[TimeRaw]"
+                      name="TimeRaw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[CurrencyCodeRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[CurrencyCodeRaw]"
+                      length="3"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[CurrencyCodeRaw]"
+                      name="CurrencyCodeRaw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[EndOfTheDayRateRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[EndOfTheDayRateRaw]"
+                      length="20"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].Columns[EndOfTheDayRateRaw]"
+                      name="EndOfTheDayRateRaw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[AverageRateRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="AverageRateRaw" />
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[DateRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DateRaw" />
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[TimeRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="TimeRaw" />
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[CurrencyCodeRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="CurrencyCodeRaw" />
+                    <externalMetadataColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output].ExternalColumns[EndOfTheDayRateRaw]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="EndOfTheDayRateRaw" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Currency Rates From File.Paths[Derived Column Output]"
+              endId="Package\Load Currency Rates From File\Insert Into Currency Rates Table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Currency Rates From File\Clean and Convert Data.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Currency Rates From File.Paths[Flat File Source Output]"
+              endId="Package\Load Currency Rates From File\Clean and Convert Data.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Currency Rates From File\Read Currency Rate File.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Load Currency Rates From File"
+          TopLeft="431,88" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Currency Rates From File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Load Currency Rates From File\Read Currency Rate File"
+          TopLeft="653,193" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Load Currency Rates From File\Clean and Convert Data"
+          TopLeft="913,310" />
+        <EdgeLayout
+          Id="Package\Load Currency Rates From File.Paths[Flat File Source Output]"
+          TopLeft="753,235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="258.5,75"
+              Start="0,0"
+              End="258.5,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
+                  <mssgle:LineSegment
+                    End="254.5,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="254.5,37.5"
+                    Point2="258.5,37.5"
+                    Point3="258.5,41.5" />
+                  <mssgle:LineSegment
+                    End="258.5,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Load Currency Rates From File\Insert Into Currency Rates Table"
+          TopLeft="419,509" />
+        <EdgeLayout
+          Id="Package\Load Currency Rates From File.Paths[Derived Column Output]"
+          TopLeft="1011.5,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-474,157"
+              Start="0,0"
+              End="-474,149.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,74.5"
+                    Point2="0,78.5"
+                    Point3="-4,78.5" />
+                  <mssgle:LineSegment
+                    End="-470,78.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-470,78.5"
+                    Point2="-474,78.5"
+                    Point3="-474,82.5" />
+                  <mssgle:LineSegment
+                    End="-474,149.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Currency Rates From File\Insert Into Currency Rates Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
