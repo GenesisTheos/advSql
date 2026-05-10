@@ -1,7 +1,11 @@
 USE Restaurant;
 GO 
 
--- A 
+-- A: grants exucute permissions for spN_ChefDetails stored proc
+GRANT EXECUTE 
+ON OBJECT::dbo.spN_ChefDetails
+TO dbo
+
 -- B 
 -- C
 -- D 
