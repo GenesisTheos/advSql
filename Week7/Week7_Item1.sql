@@ -2,7 +2,15 @@ USE Restaurant;
 GO
 
 -- A 
--- B 
+use master
+ALTER LOGIN [NT SERVICE\SQLSERVERAGENT] DISABLE;
+ 
+--B creates a login and user and assigns it the role db_backupoperator
+use Restaurant;
+CREATE LOGIN RestaurantUser WITH PASSWORD = 'RUser';
+CREATE USER RestaurantUser FOR LOGIN RestaurantUser;
+ALTER ROLE db_backupoperator ADD MEMBER RestaurantUser;
+
 -- C 
 -- D 
 
