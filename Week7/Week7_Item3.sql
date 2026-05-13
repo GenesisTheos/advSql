@@ -6,6 +6,14 @@ CREATE LOGIN dishes_table_user WITH PASSWORD = 'DUser';
 CREATE USER dishes_table_user FOR LOGIN dishes_table_user;
 ALTER ROLE db_datareader ADD MEMBER dishes_table_user;
 
+--B: Create a new user for the orders table
+-- Create the role
+CREATE ROLE orders_table_user;
+GO
+
+-- Assign guest-level access
+GRANT CONNECT TO orders_table_user;
+GO
 
 -- D: Creates chef_table_user  with permissions
 -- Create the role
