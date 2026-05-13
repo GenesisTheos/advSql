@@ -12,7 +12,35 @@ CREATE USER RestaurantUser FOR LOGIN RestaurantUser;
 ALTER ROLE db_backupoperator ADD MEMBER RestaurantUser;
 
 -- C 
--- D 
+
+-- D Create RestaurantAddDeleteDb role with server-level permissions
+-- Server-level permissions must be granted from master
+USE master;
+GO
+
+CREATE LOGIN RestaurantAddDeleteDb WITH PASSWORD = 'S3cureP@ssWord123!';
+GO
+
+GRANT CREATE ANY DATABASE TO RestaurantAddDeleteDb;
+GRANT ALTER ANY DATABASE TO RestaurantAddDeleteDb;
+GO
+
+--DENY INSERT in Restaurant database
+USE Restaurant;
+GO
+
+CREATE USER RestaurantAddDeleteDb FOR LOGIN RestaurantAddDeleteDb;
+GO
+
+CREATE ROLE RestaurantAddDeleteDb_Role;
+GO
+
+EXEC sp_addrolemember 'RestaurantAddDeleteDb_Role', 'RestaurantAddDeleteDb';
+GO
+
+-- Deny INSERT 
+DENY INSERT TO RestaurantAddDeleteDb_Role;
+GO
 
 --E: Creates RestaurantPower user than can modify rights or preveleges of other users.
 CREATE LOGIN RestaurantPower WITH PASSWORD = 'Password',
