@@ -11,7 +11,14 @@ CREATE LOGIN RestaurantUser WITH PASSWORD = 'RUser';
 CREATE USER RestaurantUser FOR LOGIN RestaurantUser;
 ALTER ROLE db_backupoperator ADD MEMBER RestaurantUser;
 
--- C 
+-- C --Create a role/user in the restaurant database "RestaurantDoAnything" 
+--And assign permissions for anything
+USE Restaurant;
+GO
+CREATE USER RestaurantDoAnything WITHOUT LOGIN;
+GO
+ALTER ROLE db_owner ADD MEMBER RestaurantDoAnything;
+GO
 
 -- D Create RestaurantAddDeleteDb role with server-level permissions
 -- Server-level permissions must be granted from master
