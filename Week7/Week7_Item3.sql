@@ -11,6 +11,14 @@ ALTER ROLE db_datareader ADD MEMBER dishes_table_user;
 CREATE ROLE orders_table_user;
 GO
 
+--C: --Create new user fot the Employee table with "datawriter" permission
+
+CREATE USER EMPLOYEES_table_user WITHOUT LOGIN;
+GO
+
+ALTER ROLE db_datawriter ADD MEMBER EMPLOYEES_table_user;
+GO
+
 -- Assign guest-level access
 GRANT CONNECT TO orders_table_user;
 GO
