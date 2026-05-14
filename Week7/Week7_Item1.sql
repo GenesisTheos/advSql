@@ -13,11 +13,22 @@ ALTER ROLE db_backupoperator ADD MEMBER RestaurantUser;
 
 -- C --Create a role/user in the restaurant database "RestaurantDoAnything" 
 --And assign permissions for anything
+USE master;
+GO
+
+CREATE LOGIN RestaurantDoAnything
+WITH PASSWORD = 'Restaurant123!';
+GO
+
 USE Restaurant;
 GO
-CREATE USER RestaurantDoAnything WITHOUT LOGIN;
+
+CREATE USER RestaurantDoAnything
+FOR LOGIN RestaurantDoAnything;
 GO
-ALTER ROLE db_owner ADD MEMBER RestaurantDoAnything;
+
+ALTER ROLE db_owner
+ADD MEMBER RestaurantDoAnything;
 GO
 
 -- D Create RestaurantAddDeleteDb role with server-level permissions
